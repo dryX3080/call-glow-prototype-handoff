@@ -1,0 +1,1565 @@
+{
+  "fileKey": "p7896b2XIPGOtu6JO7G3h6",
+  "sectionNodeId": "3534:3308",
+  "named": {
+    "micOn": "assets/microphone-on.svg",
+    "micOff": "assets/microphone-off.svg",
+    "videoOn": "assets/video-on.svg",
+    "videoOff": "assets/video-off.svg",
+    "speaker": "assets/speaker.svg",
+    "flip": "assets/flip-camera.svg",
+    "end": "assets/end-call.svg",
+    "back": "assets/back-original.svg",
+    "signalBlack": "assets/cellular-black.svg",
+    "wifiBlack": "assets/wifi-black.svg",
+    "batteryBlack": "assets/battery-black.svg",
+    "signalWhite": "assets/cellular-black-both.svg",
+    "wifiWhite": "assets/wifi-black-both.svg",
+    "batteryWhite": "assets/battery-black-both.svg",
+    "island": "assets/dynamic-island.png",
+    "recordingGreen": "assets/recording-indicator.svg",
+    "recordingPink": "assets/recording-indicator-3694-4930.svg",
+    "recordingWhite": "assets/recording-indicator-both.svg",
+    "noticeMicOff": "assets/notification-3522-1757.svg",
+    "noticeEnd": "assets/notification-3694-4930.svg",
+    "preparationDots": "assets/preparation-illustration-preparing.svg",
+    "glowOuter": "assets/glow-shape-1.svg",
+    "glowInner": "assets/glow-shape-2.svg",
+    "glowBloom": "assets/glow-button.png",
+    "localPhoto": "assets/camera-local-3522-1833.png",
+    "peerPhoto": "assets/camera-remote-both.png",
+    "lightTexture": "assets/light-texture-2.png",
+    "lightMask": "assets/light-mask-2.svg",
+    "grainGold": "assets/light-base-active.png",
+    "grainLavender": "assets/light-base-active.png",
+    "glowBloomSvg": "assets/glow-button.svg",
+    "glowComplete": "assets/glow-complete.png",
+    "grainGoldComplete": "assets/light-layer09-complete.png",
+    "preparationRing": "assets/preparation-ring.png",
+    "hintMicrophone": "assets/hint-microphone.svg",
+    "labelVideo": "assets/label-video.svg",
+    "labelEnd": "assets/label-end.svg",
+    "labelSpeaker": "assets/label-speaker.svg",
+    "labelMicrophone": "assets/label-microphone.svg",
+    "labelFlip": "assets/label-flip.svg",
+    "noticePeerLabel": "assets/notice-peer-label.svg",
+    "noticePeerComplete": "assets/notice-peer-complete.svg",
+    "noticeEndedComplete": "assets/notice-ended-complete.svg"
+  },
+  "entries": {
+    "micOn": {
+      "path": "assets/microphone-on.svg",
+      "sourceNodeId": "I3524:2874;1889:8579",
+      "rootWidth": 25,
+      "rootHeight": 25,
+      "viewBox": "0 0 25 25",
+      "bytes": 638,
+      "source": "Figma read-only SVG_STRING export"
+    },
+    "micOff": {
+      "path": "assets/microphone-off.svg",
+      "sourceNodeId": "I3560:5587;1889:8579",
+      "rootWidth": 25,
+      "rootHeight": 25,
+      "viewBox": "0 0 25 25",
+      "bytes": 983,
+      "source": "Figma read-only SVG_STRING export"
+    },
+    "videoOn": {
+      "path": "assets/video-on.svg",
+      "sourceNodeId": "I3530:3050;1889:8579",
+      "rootWidth": 21,
+      "rootHeight": 21,
+      "viewBox": "0 0 21 21",
+      "bytes": 4726,
+      "source": "Figma read-only SVG_STRING export"
+    },
+    "videoOff": {
+      "path": "assets/video-off.svg",
+      "sourceNodeId": "I3524:2871;1889:8579",
+      "rootWidth": 21,
+      "rootHeight": 21,
+      "viewBox": "0 0 21 21",
+      "bytes": 1878,
+      "source": "Figma read-only SVG_STRING export"
+    },
+    "speaker": {
+      "path": "assets/speaker.svg",
+      "sourceNodeId": "3524:2867",
+      "rootWidth": 24,
+      "rootHeight": 24,
+      "viewBox": "0 0 24 24",
+      "bytes": 1879,
+      "source": "Figma read-only SVG_STRING export"
+    },
+    "flip": {
+      "path": "assets/flip-camera.svg",
+      "sourceNodeId": "I3530:3047;1889:8579",
+      "rootWidth": 21,
+      "rootHeight": 21,
+      "viewBox": "0 0 21 21",
+      "bytes": 1636,
+      "source": "Figma read-only SVG_STRING export"
+    },
+    "end": {
+      "path": "assets/end-call.svg",
+      "sourceNodeId": "3654:13745",
+      "rootWidth": 18,
+      "rootHeight": 18,
+      "viewBox": "0 0 18 18",
+      "bytes": 775,
+      "source": "Figma get_design_context asset",
+      "sourceContext": "3522:1792"
+    },
+    "back": {
+      "path": "assets/back-original.svg",
+      "sourceNodeId": "I3522:1807;1889:8582",
+      "rootWidth": 21,
+      "rootHeight": 20,
+      "viewBox": "0 0 14 14",
+      "bytes": 784,
+      "source": "Figma get_design_context asset",
+      "sourceContext": "3522:1792"
+    },
+    "signalBlack": {
+      "path": "assets/cellular-black.svg",
+      "sourceNodeId": "I3522:1831;2969:18123",
+      "rootWidth": 19.2,
+      "rootHeight": 12.2264,
+      "viewBox": "0 0 19.2 12.2264",
+      "bytes": 1171,
+      "source": "Figma get_design_context asset",
+      "sourceContext": "3522:1792"
+    },
+    "wifiBlack": {
+      "path": "assets/wifi-black.svg",
+      "sourceNodeId": "I3522:1831;2969:18124",
+      "rootWidth": 17.1417,
+      "rootHeight": 12.3283,
+      "viewBox": "0 0 17.1417 12.3283",
+      "bytes": 1625,
+      "source": "Figma get_design_context asset",
+      "sourceContext": "3522:1792"
+    },
+    "batteryBlack": {
+      "path": "assets/battery-black.svg",
+      "sourceNodeId": "I3522:1831;2969:18125",
+      "rootWidth": 27.328,
+      "rootHeight": 13,
+      "viewBox": "0 0 27.328 13",
+      "bytes": 533,
+      "source": "Figma get_design_context asset",
+      "sourceContext": "3522:1792"
+    },
+    "signalWhite": {
+      "path": "assets/cellular-black-both.svg",
+      "sourceNodeId": "I3530:3061;2969:18123",
+      "rootWidth": 19.2,
+      "rootHeight": 12.2264,
+      "viewBox": "0 0 19.2 12.2264",
+      "bytes": 1171,
+      "source": "Figma get_design_context asset",
+      "sourceContext": "3530:3018"
+    },
+    "wifiWhite": {
+      "path": "assets/wifi-black-both.svg",
+      "sourceNodeId": "I3530:3061;2969:18124",
+      "rootWidth": 17.1417,
+      "rootHeight": 12.3283,
+      "viewBox": "0 0 17.1417 12.3283",
+      "bytes": 1625,
+      "source": "Figma get_design_context asset",
+      "sourceContext": "3530:3018"
+    },
+    "batteryWhite": {
+      "path": "assets/battery-black-both.svg",
+      "sourceNodeId": "I3530:3061;2969:18125",
+      "rootWidth": 27.328,
+      "rootHeight": 13,
+      "viewBox": "0 0 27.328 13",
+      "bytes": 533,
+      "source": "Figma get_design_context asset",
+      "sourceContext": "3530:3018"
+    },
+    "island": {
+      "path": "assets/dynamic-island.png",
+      "sourceNodeId": "3522:1832",
+      "intrinsicWidth": 1350,
+      "intrinsicHeight": 2760,
+      "bytes": 426690,
+      "source": "Figma get_design_context asset",
+      "sourceContext": "3522:1792"
+    },
+    "recordingGreen": {
+      "path": "assets/recording-indicator.svg",
+      "sourceNodeId": "3522:1811",
+      "rootWidth": 8,
+      "rootHeight": 8,
+      "viewBox": "0 0 8 8",
+      "bytes": 239,
+      "source": "Figma get_design_context asset",
+      "sourceContext": "3522:1792"
+    },
+    "recordingPink": {
+      "path": "assets/recording-indicator-3694-4930.svg",
+      "sourceNodeId": "3694:4949",
+      "rootWidth": 8,
+      "rootHeight": 8,
+      "viewBox": "0 0 8 8",
+      "bytes": 239,
+      "source": "Figma get_design_context asset",
+      "sourceContext": "3694:4930"
+    },
+    "recordingWhite": {
+      "path": "assets/recording-indicator-both.svg",
+      "sourceNodeId": "3530:3037",
+      "rootWidth": 8,
+      "rootHeight": 8,
+      "viewBox": "0 0 8 8",
+      "bytes": 237,
+      "source": "Figma get_design_context asset",
+      "sourceContext": "3530:3018"
+    },
+    "noticeMicOff": {
+      "path": "assets/notification-3522-1757.svg",
+      "sourceNodeId": "I3522:1780;1825:3971",
+      "rootWidth": 16,
+      "rootHeight": 16,
+      "viewBox": "0 0 16 16",
+      "bytes": 567,
+      "source": "Figma get_design_context asset",
+      "sourceContext": "3522:1757"
+    },
+    "noticeEnd": {
+      "path": "assets/notification-3694-4930.svg",
+      "sourceNodeId": "I3694:5777;1825:3971",
+      "rootWidth": 16,
+      "rootHeight": 16,
+      "viewBox": "0 0 16 16",
+      "bytes": 2700,
+      "source": "Figma get_design_context asset",
+      "sourceContext": "3694:4930"
+    },
+    "preparationDots": {
+      "path": "assets/preparation-illustration-preparing.svg",
+      "sourceNodeId": "3522:1750",
+      "rootWidth": 170,
+      "rootHeight": 58,
+      "viewBox": "0 0 170 58",
+      "bytes": 3331,
+      "source": "Figma get_design_context asset",
+      "sourceContext": "3522:1719"
+    },
+    "glowOuter": {
+      "path": "assets/glow-shape-1.svg",
+      "sourceNodeId": "3524:2892",
+      "rootWidth": 84,
+      "rootHeight": 83,
+      "viewBox": "0 0 84 83",
+      "bytes": 1402,
+      "source": "Figma read-only SVG_STRING export"
+    },
+    "glowInner": {
+      "path": "assets/glow-shape-2.svg",
+      "sourceNodeId": "3524:2893",
+      "rootWidth": 81,
+      "rootHeight": 81,
+      "viewBox": "0 0 81 81",
+      "bytes": 1387,
+      "source": "Figma read-only SVG_STRING export"
+    },
+    "glowBloom": {
+      "path": "assets/glow-button.png",
+      "sourceNodeId": "3524:2894",
+      "intrinsicWidth": 451,
+      "intrinsicHeight": 455,
+      "bytes": 60556,
+      "source": "Figma read-only PNG exportAsync at2×",
+      "displayWidth": 226,
+      "displayHeight": 228
+    },
+    "localPhoto": {
+      "path": "assets/camera-local-3522-1833.png",
+      "sourceNodeId": "3528:3003",
+      "intrinsicWidth": 679,
+      "intrinsicHeight": 452,
+      "bytes": 333525,
+      "source": "Figma get_design_context asset",
+      "sourceContext": "3522:1833"
+    },
+    "peerPhoto": {
+      "path": "assets/camera-remote-both.png",
+      "sourceNodeId": "3530:3105",
+      "intrinsicWidth": 1072,
+      "intrinsicHeight": 1908,
+      "bytes": 1472428,
+      "source": "Figma get_design_context asset",
+      "sourceContext": "3530:3018"
+    },
+    "lightTexture": {
+      "path": "assets/light-texture-2.png",
+      "sourceNodeId": "3522:1804",
+      "intrinsicWidth": 1024,
+      "intrinsicHeight": 1024,
+      "bytes": 140397,
+      "source": "Figma get_design_context asset",
+      "sourceContext": "3522:1792"
+    },
+    "lightMask": {
+      "path": "assets/light-mask-2.svg",
+      "sourceNodeId": "3522:1794",
+      "rootWidth": 582,
+      "rootHeight": 868,
+      "viewBox": "0 0 582 868",
+      "bytes": 1982,
+      "source": "Figma get_design_context asset",
+      "sourceContext": "3522:1792"
+    },
+    "grainGold": {
+      "path": "assets/light-base-active.png",
+      "sourceNodeId": "3522:1802",
+      "intrinsicWidth": 1024,
+      "intrinsicHeight": 576,
+      "bytes": 375451,
+      "source": "Figma get_design_context asset",
+      "sourceContext": "3522:1792"
+    },
+    "grainLavender": {
+      "path": "assets/light-base-active.png",
+      "sourceNodeId": "3560:5512",
+      "intrinsicWidth": 1024,
+      "intrinsicHeight": 576,
+      "bytes": 375451,
+      "source": "Figma get_design_context asset",
+      "sourceContext": "3522:1792"
+    },
+    "glowBloomSvg": {
+      "path": "assets/glow-button.svg",
+      "sourceNodeId": "3524:2894",
+      "rootWidth": 226,
+      "rootHeight": 228,
+      "viewBox": "0 0 226 228",
+      "bytes": 3549,
+      "source": "Figma read-only SVG_STRING export"
+    },
+    "glowComplete": {
+      "path": "assets/glow-complete.png",
+      "sourceNodeId": "3524:2891",
+      "intrinsicWidth": 451,
+      "intrinsicHeight": 455,
+      "bytes": 76260,
+      "source": "Figma read-only entire-group PNG exportAsync at2x",
+      "naturalCssWidth": 225.5,
+      "naturalCssHeight": 227.5,
+      "cssOriginRelativeToControls": {
+        "x": 117.7734375,
+        "y": -81.259765625
+      },
+      "figmaRenderWidth": 225.087646484375,
+      "figmaRenderHeight": 227.478515625,
+      "groupGeometryRelativeToControls": {
+        "x": 187,
+        "y": -9,
+        "width": 82,
+        "height": 82.00045013427734
+      },
+      "notes": "All three original Glow layers composited by Figma with original opacity, paint, blend modes and effects. Do not multiply opacity again."
+    },
+    "grainGoldComplete": {
+      "path": "assets/light-layer09-complete.png",
+      "sourceNodeId": "3522:1802",
+      "intrinsicWidth": 402,
+      "intrinsicHeight": 736,
+      "bytes": 284926,
+      "source": "Figma read-only whole-node PNG exportAsync at1x",
+      "naturalCssWidth": 402,
+      "naturalCssHeight": 736,
+      "cssOriginRelativeToActiveFrame": {
+        "x": 0,
+        "y": 138.759765625
+      },
+      "paints": [
+        {
+          "type": "IMAGE",
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "imageHash": "65a2fed2ed5533622041fc01051bdde306f7c4df"
+        },
+        {
+          "type": "SOLID",
+          "opacity": 1,
+          "blendMode": "HARD_LIGHT",
+          "color": "#FDAB1B"
+        },
+        {
+          "type": "IMAGE",
+          "opacity": 0.3,
+          "blendMode": "SCREEN",
+          "imageHash": "2a3fd1d45b1a12fd3e6d8913cfd5618b0d307408"
+        }
+      ],
+      "notes": "Diagnostic only: original gold tint, two photographic paints, transform and layer blur baked by Figma. Original render bounds respect mask/ancestor frame clipping; export402x736. Use at x0,y138.759766 in active402x874 frame. Do not blur/tint or apply feather a second time for static comparison.",
+      "figmaRenderWidth": 402,
+      "figmaRenderHeight": 735.240234375
+    },
+    "preparationRing": {
+      "path": "assets/preparation-ring.png",
+      "sourceNodeId": "3522:1753",
+      "rootWidth": 116,
+      "rootHeight": 116,
+      "viewBox": "0 0 58 58",
+      "source": "Original Figma PNG export at 2x preserving Glass effect",
+      "nodeSize": [
+        24,
+        24
+      ],
+      "renderPadding": [
+        17,
+        9
+      ],
+      "instances": 3,
+      "cssSize": [
+        58,
+        58
+      ]
+    },
+    "hintMicrophone": {
+      "path": "assets/hint-microphone.svg",
+      "sourceNodeId": "3560:5575",
+      "rootWidth": 212,
+      "rootHeight": 34,
+      "source": "Original Gerbera Medium text exported as SVG from Figma",
+      "fontSize": 15,
+      "weight": 500,
+      "frameWidth": 214,
+      "frameHeight": 40,
+      "placement": "Centered inside original Figma text frame, without resizing SVG"
+    },
+    "labelVideo": {
+      "path": "assets/label-video.svg",
+      "sourceNodeId": "3560:5585",
+      "rootWidth": 41,
+      "rootHeight": 12,
+      "source": "Original Gerbera Medium text exported as SVG from Figma",
+      "fontSize": 14,
+      "weight": 500,
+      "frameWidth": 69,
+      "frameHeight": 18,
+      "placement": "Centered inside original Figma text frame, without resizing SVG"
+    },
+    "labelEnd": {
+      "path": "assets/label-end.svg",
+      "sourceNodeId": "3560:5592",
+      "rootWidth": 74,
+      "rootHeight": 14,
+      "source": "Original Gerbera Medium text exported as SVG from Figma",
+      "fontSize": 14,
+      "weight": 500,
+      "frameWidth": 75,
+      "frameHeight": 18,
+      "placement": "Centered inside original Figma text frame, without resizing SVG"
+    },
+    "labelSpeaker": {
+      "path": "assets/label-speaker.svg",
+      "sourceNodeId": "3560:5582",
+      "rootWidth": 64,
+      "rootHeight": 13,
+      "source": "Original Gerbera Medium text exported as SVG from Figma",
+      "fontSize": 14,
+      "weight": 500,
+      "frameWidth": 69,
+      "frameHeight": 18,
+      "placement": "Centered inside original Figma text frame, without resizing SVG"
+    },
+    "labelMicrophone": {
+      "path": "assets/label-microphone.svg",
+      "sourceNodeId": "3560:5588",
+      "rootWidth": 74,
+      "rootHeight": 14,
+      "source": "Original Gerbera Medium text exported as SVG from Figma",
+      "fontSize": 14,
+      "weight": 500,
+      "frameWidth": 76,
+      "frameHeight": 18,
+      "placement": "Centered inside original Figma text frame, without resizing SVG"
+    },
+    "labelFlip": {
+      "path": "assets/label-flip.svg",
+      "sourceNodeId": "3524:2906",
+      "rootWidth": 90,
+      "rootHeight": 14,
+      "source": "Original Gerbera Medium text exported as SVG from Figma",
+      "fontSize": 14,
+      "weight": 500,
+      "frameWidth": 92,
+      "frameHeight": 18,
+      "placement": "Centered inside original Figma text frame, without resizing SVG"
+    },
+    "noticePeerLabel": {
+      "path": "assets/notice-peer-label.svg",
+      "sourceNodeId": "I3522:1871;1825:3972",
+      "rootWidth": 241,
+      "rootHeight": 15,
+      "fontSize": 15,
+      "weight": 500,
+      "source": "Original Gerbera Medium text exported as SVG from Figma",
+      "frameWidth": 243,
+      "frameHeight": 15,
+      "placement": "Centered inside original Figma text frame, without resizing SVG"
+    },
+    "noticePeerComplete": {
+      "source": "Original complete Figma SVG export; unchanged",
+      "bytes": 21349,
+      "rootWidth": 301,
+      "rootHeight": 36,
+      "path": "assets/notice-peer-complete.svg",
+      "sourceNodeId": "3522:1780"
+    },
+    "noticeEndedComplete": {
+      "source": "Original complete Figma SVG export; unchanged",
+      "bytes": 17055,
+      "rootWidth": 183,
+      "rootHeight": 36,
+      "path": "assets/notice-ended-complete.svg",
+      "sourceNodeId": "3694:5777"
+    }
+  },
+  "notes": {
+    "grain": "Gold and lavender use the same original multi-image Light layer09; palette-specific hard-light tint belongs in the compositing layer.",
+    "mask": "Fresh mask export includes original24px feather padding; root582×868, node534×820. Keep fixed. Original texture is opacity.32 COLOR_DODGE exposure-.07.",
+    "icons": "Whole original SVG exports preserve paths, fill and effects; do not substitute generic icons. SVG root width/height are natural and must not be overridden.",
+    "glow": "All exports have original opacity and blur baked. Glow Inner has rotation/skew baked. glowBloom is an original Figma PNG export at2× for foreignObject compatibility. glowBloomSvg retains the whole original SVG. Display PNG at226×228px for original geometry."
+  },
+  "glowGeometry": [
+    {
+      "id": "3524:2891",
+      "name": "Glow",
+      "type": "GROUP",
+      "x": 187,
+      "y": -9,
+      "width": 82,
+      "height": 82.00045013427734,
+      "absoluteBoundingBox": {
+        "x": 2216,
+        "y": 13881,
+        "width": 82,
+        "height": 82.00045013427734
+      },
+      "absoluteRenderBounds": {
+        "x": 2146.7734375,
+        "y": 13808.740234375,
+        "width": 225.087646484375,
+        "height": 227.478515625
+      },
+      "relativeTransform": [
+        [
+          1,
+          0,
+          187
+        ],
+        [
+          0,
+          1,
+          -9
+        ]
+      ],
+      "effects": [],
+      "opacity": 1,
+      "blendMode": "PASS_THROUGH",
+      "children": [
+        {
+          "id": "3524:2892",
+          "name": "Glow shape"
+        },
+        {
+          "id": "3524:2893",
+          "name": "Glow shape"
+        },
+        {
+          "id": "3524:2894",
+          "name": "button glow"
+        }
+      ]
+    },
+    {
+      "id": "3524:2892",
+      "name": "Glow shape",
+      "type": "VECTOR",
+      "x": 187.712890625,
+      "y": -7.908203125,
+      "width": 80.2174072265625,
+      "height": 79.6866455078125,
+      "absoluteBoundingBox": {
+        "x": 2216.712890625,
+        "y": 13882.091796875,
+        "width": 80.2174072265625,
+        "height": 79.6866455078125
+      },
+      "absoluteRenderBounds": {
+        "x": 2215.189453125,
+        "y": 13880.568359375,
+        "width": 83.26416015625,
+        "height": 82.7333984375
+      },
+      "relativeTransform": [
+        [
+          1,
+          0,
+          187.712890625
+        ],
+        [
+          0,
+          1,
+          -7.908203125
+        ]
+      ],
+      "effects": [
+        {
+          "type": "LAYER_BLUR",
+          "visible": true,
+          "radius": 1.5233218669891357,
+          "boundVariables": {},
+          "blurType": "NORMAL"
+        }
+      ],
+      "opacity": 0.23999999463558197,
+      "blendMode": "PASS_THROUGH"
+    },
+    {
+      "id": "3524:2893",
+      "name": "Glow shape",
+      "type": "VECTOR",
+      "x": 269,
+      "y": 0.580078125,
+      "width": 72.98047637939453,
+      "height": 73.59866333007812,
+      "absoluteBoundingBox": {
+        "x": 2216.0000022068907,
+        "y": 13880.99959735774,
+        "width": 81.99999779310929,
+        "height": 82.00045412026157
+      },
+      "absoluteRenderBounds": {
+        "x": 2216.75634765625,
+        "y": 13882.318359375,
+        "width": 80.889892578125,
+        "height": 80.6484375
+      },
+      "relativeTransform": [
+        [
+          -0.12369825690984726,
+          -0.9914913773536682,
+          269
+        ],
+        [
+          0.9923198223114014,
+          -0.13017193973064423,
+          0.580078125
+        ]
+      ],
+      "effects": [
+        {
+          "type": "LAYER_BLUR",
+          "visible": true,
+          "radius": 3.0466437339782715,
+          "boundVariables": {},
+          "blurType": "NORMAL"
+        }
+      ],
+      "opacity": 0.699999988079071,
+      "blendMode": "PASS_THROUGH"
+    },
+    {
+      "id": "3524:2894",
+      "name": "button glow",
+      "type": "RECTANGLE",
+      "x": 198.76513671875,
+      "y": -0.2685546875,
+      "width": 63.10436248779297,
+      "height": 65.49586486816406,
+      "absoluteBoundingBox": {
+        "x": 2227.76513671875,
+        "y": 13889.7314453125,
+        "width": 63.10436248779297,
+        "height": 65.49586486816406
+      },
+      "absoluteRenderBounds": {
+        "x": 2146.7734375,
+        "y": 13808.740234375,
+        "width": 225.087646484375,
+        "height": 227.478515625
+      },
+      "relativeTransform": [
+        [
+          1,
+          0,
+          198.76513671875
+        ],
+        [
+          0,
+          1,
+          -0.2685546875
+        ]
+      ],
+      "effects": [
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 80.99169921875,
+          "boundVariables": {},
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 0.5
+          },
+          "offset": {
+            "x": 0,
+            "y": 0
+          },
+          "spread": 0,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": false
+        },
+        {
+          "type": "DROP_SHADOW",
+          "visible": true,
+          "radius": 17.99815559387207,
+          "boundVariables": {},
+          "color": {
+            "r": 0,
+            "g": 0,
+            "b": 0,
+            "a": 1
+          },
+          "offset": {
+            "x": 0,
+            "y": 0
+          },
+          "spread": 0,
+          "blendMode": "NORMAL",
+          "showShadowBehindNode": false
+        },
+        {
+          "type": "LAYER_BLUR",
+          "visible": true,
+          "radius": 18.279863357543945,
+          "boundVariables": {},
+          "blurType": "NORMAL"
+        }
+      ],
+      "opacity": 0.20000000298023224,
+      "blendMode": "LINEAR_DODGE"
+    }
+  ],
+  "photoGeometry": [
+    {
+      "id": "3522:1802",
+      "name": "Background / Light layer 09",
+      "x": -24,
+      "y": 863.6641616821289,
+      "width": 448,
+      "height": 536.9047241210938,
+      "absoluteBoundingBox": {
+        "x": 1985,
+        "y": 13490.759338378906,
+        "width": 448,
+        "height": 536.9047241210938
+      },
+      "parentId": "3522:1793",
+      "parentName": "Background / Gold glow",
+      "imagePaints": [
+        {
+          "hash": "65a2fed2ed5533622041fc01051bdde306f7c4df",
+          "scaleMode": "CROP",
+          "imageTransform": [
+            [
+              0.400288462638855,
+              0,
+              0.2998557686805725
+            ],
+            [
+              0,
+              0.6840304136276245,
+              0.11839082837104797
+            ]
+          ],
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "exposure": 0.1899999976158142
+        },
+        {
+          "hash": "2a3fd1d45b1a12fd3e6d8913cfd5618b0d307408",
+          "scaleMode": "CROP",
+          "imageTransform": [
+            [
+              0.5458515286445618,
+              0,
+              0.22707422077655792
+            ],
+            [
+              0,
+              0.9546135663986206,
+              -0.22281454503536224
+            ]
+          ],
+          "opacity": 0.30000001192092896,
+          "blendMode": "SCREEN",
+          "exposure": -0.07000000029802322
+        }
+      ]
+    },
+    {
+      "id": "3522:1804",
+      "name": "Background / Texture layer 11",
+      "x": -260,
+      "y": 851.146068572998,
+      "width": 816,
+      "height": 682.3357543945312,
+      "absoluteBoundingBox": {
+        "x": 1749,
+        "y": 13332.810729980469,
+        "width": 816,
+        "height": 682.3357543945312
+      },
+      "parentId": "3522:1793",
+      "parentName": "Background / Gold glow",
+      "imagePaints": [
+        {
+          "hash": "2a3fd1d45b1a12fd3e6d8913cfd5618b0d307408",
+          "scaleMode": "CROP",
+          "imageTransform": [
+            [
+              -1.2426731586456299,
+              1.20905072609495E-16,
+              1.091431975364685
+            ],
+            [
+              -1.5218356413187296E-16,
+              -0.9872649312019348,
+              0.9870967268943787
+            ]
+          ],
+          "opacity": 0.3199999928474426,
+          "blendMode": "COLOR_DODGE",
+          "exposure": -0.07000000029802322
+        }
+      ]
+    },
+    {
+      "id": "3528:3003",
+      "name": "image 13",
+      "x": 20,
+      "y": 508,
+      "width": 135,
+      "height": 180,
+      "absoluteBoundingBox": {
+        "x": 2909,
+        "y": 13672,
+        "width": 135,
+        "height": 180
+      },
+      "parentId": "3522:1833",
+      "parentName": "Звонок / камера у пользователя вкл / у собеседника выкл",
+      "imagePaints": [
+        {
+          "hash": "eca2dc46b2aff4879daa14b3cce52403a41592ab",
+          "scaleMode": "FILL",
+          "imageTransform": [
+            [
+              0.49926361441612244,
+              0,
+              0.2503681778907776
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "exposure": 0
+        }
+      ]
+    },
+    {
+      "id": "3530:3105",
+      "name": "image 15",
+      "x": -54,
+      "y": -12,
+      "width": 498,
+      "height": 885,
+      "absoluteBoundingBox": {
+        "x": 3715,
+        "y": 13153,
+        "width": 498,
+        "height": 885
+      },
+      "parentId": "3530:3100",
+      "parentName": "Камера собеседника",
+      "imagePaints": [
+        {
+          "hash": "e4b80e72e7659dc3747fb9060f0063a3880cc26b",
+          "scaleMode": "FILL",
+          "imageTransform": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "exposure": 0
+        }
+      ]
+    },
+    {
+      "id": "3534:3240",
+      "name": "image 15",
+      "x": -54,
+      "y": -12,
+      "width": 498,
+      "height": 885,
+      "absoluteBoundingBox": {
+        "x": 3715,
+        "y": 14079,
+        "width": 498,
+        "height": 885
+      },
+      "parentId": "3534:3239",
+      "parentName": "Камера собеседника",
+      "imagePaints": [
+        {
+          "hash": "e4b80e72e7659dc3747fb9060f0063a3880cc26b",
+          "scaleMode": "FILL",
+          "imageTransform": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "exposure": 0
+        }
+      ]
+    },
+    {
+      "id": "3534:3160",
+      "name": "image 15",
+      "x": -54,
+      "y": -12,
+      "width": 498,
+      "height": 885,
+      "absoluteBoundingBox": {
+        "x": 4595,
+        "y": 13153,
+        "width": 498,
+        "height": 885
+      },
+      "parentId": "3534:3159",
+      "parentName": "Frame 2147224258",
+      "imagePaints": [
+        {
+          "hash": "e4b80e72e7659dc3747fb9060f0063a3880cc26b",
+          "scaleMode": "FILL",
+          "imageTransform": [
+            [
+              1,
+              0,
+              0
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "exposure": 0
+        }
+      ]
+    },
+    {
+      "id": "3534:3161",
+      "name": "image 13",
+      "x": 20,
+      "y": 136,
+      "width": 135,
+      "height": 180,
+      "absoluteBoundingBox": {
+        "x": 4669,
+        "y": 13300,
+        "width": 135,
+        "height": 180
+      },
+      "parentId": "3534:3145",
+      "parentName": "Звонок / камера вкл у обеих",
+      "imagePaints": [
+        {
+          "hash": "eca2dc46b2aff4879daa14b3cce52403a41592ab",
+          "scaleMode": "FILL",
+          "imageTransform": [
+            [
+              0.49926361441612244,
+              0,
+              0.2503681778907776
+            ],
+            [
+              0,
+              1,
+              0
+            ]
+          ],
+          "opacity": 1,
+          "blendMode": "NORMAL",
+          "exposure": 0
+        }
+      ]
+    }
+  ],
+  "contexts": {
+    "3522-1792": {
+      "imgBackgroundLightLayer09": "assets/light-base-active.png",
+      "imgBackgroundTextureLayer11": "assets/light-texture-2.png",
+      "imgSystemDynamicIsland": "assets/dynamic-island.png",
+      "imgBackgroundLightLayer02": "assets/light-mask-2.svg",
+      "imgChevronLeft": "assets/chevron-left.svg",
+      "imgRecordingIndicator": "assets/recording-indicator.svg",
+      "imgGlowShape": "assets/glow-context-1.svg",
+      "imgGlowShape1": "assets/glow-context-2.svg",
+      "imgVector": "assets/speaker-context-vector.svg",
+      "imgCloseIcon": "assets/end-call.svg",
+      "imgCellularConnection": "assets/cellular-black.svg",
+      "imgWifi": "assets/wifi-black.svg",
+      "imgBattery": "assets/battery-black.svg"
+    },
+    "3522-1719": {
+      "imgBackgroundLightLayer09": "assets/light-base-active.png",
+      "imgBackgroundTextureLayer11": "assets/light-texture-2.png",
+      "imgSystemDynamicIsland": "assets/dynamic-island.png",
+      "imgBackgroundLightLayer02": "assets/light-mask-preparing.svg",
+      "imgChevronLeft": "assets/chevron-left.svg",
+      "imgRecordingIndicator": "assets/recording-indicator.svg",
+      "imgIllustration": "assets/preparation-illustration-preparing.svg",
+      "imgVector": "assets/speaker-context-vector.svg",
+      "imgCloseIcon": "assets/end-call.svg",
+      "imgCellularConnection": "assets/cellular-black.svg",
+      "imgWifi": "assets/wifi-black.svg",
+      "imgBattery": "assets/battery-black.svg"
+    },
+    "3522-1757": {
+      "imgBackgroundTextureLayer11": "assets/light-texture-2.png",
+      "imgSystemDynamicIsland": "assets/dynamic-island.png",
+      "imgBackgroundLightLayer02": "assets/light-mask-3522-1757.svg",
+      "imgChevronLeft": "assets/chevron-left.svg",
+      "imgRecordingIndicator": "assets/recording-indicator.svg",
+      "imgLeadingIcon": "assets/notification-3522-1757.svg",
+      "imgVector": "assets/speaker-context-vector.svg",
+      "imgCloseIcon": "assets/end-call.svg",
+      "imgCellularConnection": "assets/cellular-black.svg",
+      "imgWifi": "assets/wifi-black.svg",
+      "imgBattery": "assets/battery-black.svg"
+    },
+    "3522-1833": {
+      "imgBackgroundTextureLayer11": "assets/light-texture-2.png",
+      "imgImage13": "assets/camera-local-3522-1833.png",
+      "imgSystemDynamicIsland": "assets/dynamic-island.png",
+      "imgBackgroundLightLayer02": "assets/light-mask-3522-1833.svg",
+      "imgChevronLeft": "assets/chevron-left.svg",
+      "imgRecordingIndicator": "assets/recording-indicator.svg",
+      "imgLeadingIcon": "assets/notification-3522-1757.svg",
+      "imgGlowShape": "assets/glow-context-1-3522-1833.svg",
+      "imgGlowShape1": "assets/glow-context-2-3522-1833.svg",
+      "imgCloseIcon": "assets/end-call.svg",
+      "imgCellularConnection": "assets/cellular-black.svg",
+      "imgWifi": "assets/wifi-black.svg",
+      "imgBattery": "assets/battery-black.svg"
+    },
+    "3530-3018": {
+      "imgBackgroundTextureLayer11": "assets/light-texture-2.png",
+      "imgImage15": "assets/camera-remote-both.png",
+      "img": "assets/camera-local-3522-1833.png",
+      "imgSystemDynamicIsland": "assets/dynamic-island.png",
+      "imgBackgroundLightLayer02": "assets/light-mask-both.svg",
+      "imgChevronLeft": "assets/chevron-left.svg",
+      "imgRecordingIndicator": "assets/recording-indicator-both.svg",
+      "imgGlowShape": "assets/glow-context-1-both.svg",
+      "imgGlowShape1": "assets/glow-context-2-both.svg",
+      "imgCloseIcon": "assets/end-call.svg",
+      "imgCellularConnection": "assets/cellular-black-both.svg",
+      "imgWifi": "assets/wifi-black-both.svg",
+      "imgBattery": "assets/battery-black-both.svg"
+    },
+    "3534-3225": {
+      "imgBackgroundTextureLayer11": "assets/light-texture-2.png",
+      "imgImage15": "assets/camera-remote-both.png",
+      "imgSystemDynamicIsland": "assets/dynamic-island.png",
+      "imgBackgroundLightLayer02": "assets/light-mask-3534-3225.svg",
+      "imgChevronLeft": "assets/chevron-left.svg",
+      "imgRecordingIndicator": "assets/recording-indicator-both.svg",
+      "imgGlowShape": "assets/glow-context-1-3534-3225.svg",
+      "imgGlowShape1": "assets/glow-context-2-3534-3225.svg",
+      "imgCloseIcon": "assets/end-call.svg",
+      "imgCellularConnection": "assets/cellular-black-both.svg",
+      "imgWifi": "assets/wifi-black-both.svg",
+      "imgBattery": "assets/battery-black-both.svg"
+    },
+    "3534-3145": {
+      "imgBackgroundTextureLayer11": "assets/light-texture-2.png",
+      "imgImage15": "assets/camera-remote-both.png",
+      "imgImage13": "assets/camera-local-3522-1833.png",
+      "imgSystemDynamicIsland": "assets/dynamic-island.png",
+      "imgBackgroundLightLayer02": "assets/light-mask-3534-3145.svg",
+      "imgCellularConnection": "assets/cellular-black-both.svg",
+      "imgWifi": "assets/wifi-black-both.svg",
+      "imgBattery": "assets/battery-black-both.svg"
+    },
+    "3560-5502": {
+      "imgBackgroundLightLayer09": "assets/light-base-active.png",
+      "imgBackgroundTextureLayer11": "assets/light-texture-2.png",
+      "imgSystemDynamicIsland": "assets/dynamic-island.png",
+      "imgBackgroundLightLayer02": "assets/light-mask-3560-5502.svg",
+      "imgChevronLeft": "assets/chevron-left.svg",
+      "imgRecordingIndicator": "assets/recording-indicator.svg",
+      "imgVector": "assets/speaker-context-vector.svg",
+      "imgCloseIcon": "assets/end-call.svg",
+      "imgCellularConnection": "assets/cellular-black.svg",
+      "imgWifi": "assets/wifi-black.svg",
+      "imgBattery": "assets/battery-black.svg"
+    },
+    "3694-4930": {
+      "imgBackgroundTextureLayer11": "assets/light-texture-2.png",
+      "imgSystemDynamicIsland": "assets/dynamic-island.png",
+      "imgBackgroundLightLayer02": "assets/light-mask-3694-4930.svg",
+      "imgChevronLeft": "assets/chevron-left.svg",
+      "imgRecordingIndicator": "assets/recording-indicator-3694-4930.svg",
+      "imgVector": "assets/speaker-context-vector.svg",
+      "imgCloseIcon": "assets/end-call.svg",
+      "imgLeadingIcon": "assets/notification-3694-4930.svg",
+      "imgCellularConnection": "assets/cellular-black.svg",
+      "imgWifi": "assets/wifi-black.svg",
+      "imgBattery": "assets/battery-black.svg"
+    }
+  },
+  "fonts": [
+    {
+      "path": "assets/fonts/gerbera-light.otf",
+      "weight": 300,
+      "bytes": 187636
+    },
+    {
+      "path": "assets/fonts/gerbera-regular.otf",
+      "weight": 400,
+      "bytes": 204956
+    },
+    {
+      "path": "assets/fonts/gerbera-medium.otf",
+      "weight": 500,
+      "bytes": 210880
+    },
+    {
+      "path": "assets/fonts/gerbera-bold.otf",
+      "weight": 700,
+      "bytes": 210768
+    },
+    {
+      "path": "assets/fonts/gerbera-black.otf",
+      "weight": 900,
+      "bytes": 211484
+    }
+  ],
+  "positionGeometry": [
+    {
+      "id": "3522:1792",
+      "name": "Звонок",
+      "x": 1731,
+      "y": 133,
+      "width": 402,
+      "height": 874,
+      "rotation": 0,
+      "absoluteBoundingBox": {
+        "x": 2009,
+        "y": 13164,
+        "width": 402,
+        "height": 874
+      },
+      "absoluteRenderBounds": {
+        "x": 2009,
+        "y": 13164,
+        "width": 402,
+        "height": 874
+      },
+      "children": [
+        {
+          "id": "3522:1793",
+          "name": "Background / Gold glow",
+          "x": -66,
+          "y": 911,
+          "width": 534,
+          "height": 820
+        },
+        {
+          "id": "3522:1805",
+          "name": "Character Visual / Dark",
+          "x": 8.74609375,
+          "y": 154,
+          "width": 383.50616455078125,
+          "height": 352
+        },
+        {
+          "id": "3522:1806",
+          "name": "Header / Navigation",
+          "x": 0,
+          "y": 68,
+          "width": 402,
+          "height": 48
+        },
+        {
+          "id": "3524:2863",
+          "name": "Controls",
+          "x": 20,
+          "y": 726,
+          "width": 362,
+          "height": 98
+        },
+        {
+          "id": "3522:1830",
+          "name": "System / Status area",
+          "x": 1,
+          "y": -3,
+          "width": 402,
+          "height": 60
+        }
+      ]
+    },
+    {
+      "id": "3524:2863",
+      "name": "Controls",
+      "x": 20,
+      "y": 726,
+      "width": 362,
+      "height": 98,
+      "rotation": 0,
+      "absoluteBoundingBox": {
+        "x": 2029,
+        "y": 13890,
+        "width": 362,
+        "height": 98
+      },
+      "absoluteRenderBounds": {
+        "x": 2029,
+        "y": 13808.740234375,
+        "width": 362,
+        "height": 227.478515625
+      },
+      "children": [
+        {
+          "id": "3524:2891",
+          "name": "Glow",
+          "x": 187,
+          "y": -9,
+          "width": 82,
+          "height": 82.00045013427734
+        },
+        {
+          "id": "3524:2864",
+          "name": "Speaker",
+          "x": 7,
+          "y": 0,
+          "width": 69,
+          "height": 98
+        },
+        {
+          "id": "3524:2870",
+          "name": "Video",
+          "x": 100,
+          "y": 0,
+          "width": 69,
+          "height": 98
+        },
+        {
+          "id": "3524:2873",
+          "name": "Microphone",
+          "x": 193,
+          "y": 0,
+          "width": 69,
+          "height": 98
+        },
+        {
+          "id": "3524:2876",
+          "name": "End call",
+          "x": 286,
+          "y": 0,
+          "width": 69,
+          "height": 98
+        }
+      ]
+    },
+    {
+      "id": "3524:2874",
+      "name": "Button",
+      "x": 2.5,
+      "y": 0,
+      "width": 64,
+      "height": 64,
+      "rotation": 0,
+      "absoluteBoundingBox": {
+        "x": 2224.5,
+        "y": 13890,
+        "width": 64,
+        "height": 64
+      },
+      "absoluteRenderBounds": {
+        "x": 2222.5,
+        "y": 13888,
+        "width": 68,
+        "height": 68
+      },
+      "children": [
+        {
+          "id": "I3524:2874;1889:8579",
+          "name": "microphone-fat",
+          "x": 19.52745246887207,
+          "y": 19.972900390625,
+          "width": 24.94509506225586,
+          "height": 24.94509506225586
+        }
+      ]
+    },
+    {
+      "id": "3524:2865",
+      "name": "Button",
+      "x": 2.5,
+      "y": 0,
+      "width": 64,
+      "height": 64,
+      "rotation": 0,
+      "absoluteBoundingBox": {
+        "x": 2038.5,
+        "y": 13890,
+        "width": 64,
+        "height": 64
+      },
+      "absoluteRenderBounds": {
+        "x": 2038.5,
+        "y": 13890,
+        "width": 64,
+        "height": 64
+      },
+      "children": [
+        {
+          "id": "3524:2866",
+          "name": "Icon / Close",
+          "x": 23,
+          "y": 23.5,
+          "width": 18,
+          "height": 18
+        }
+      ]
+    },
+    {
+      "id": "3524:2871",
+      "name": "Button",
+      "x": 2.5,
+      "y": 0,
+      "width": 64,
+      "height": 64,
+      "rotation": 0,
+      "absoluteBoundingBox": {
+        "x": 2131.5,
+        "y": 13890,
+        "width": 64,
+        "height": 64
+      },
+      "absoluteRenderBounds": {
+        "x": 2131.5,
+        "y": 13890,
+        "width": 64,
+        "height": 64
+      },
+      "children": [
+        {
+          "id": "I3524:2871;1889:8579",
+          "name": "Icon / video mute",
+          "x": 21.60620880126953,
+          "y": 22.05165672302246,
+          "width": 20.787580490112305,
+          "height": 20.787580490112305
+        }
+      ]
+    },
+    {
+      "id": "3522:1750",
+      "name": "Illustration",
+      "x": 133,
+      "y": 425,
+      "width": 136,
+      "height": 24,
+      "rotation": 0,
+      "absoluteBoundingBox": {
+        "x": 504,
+        "y": 13589,
+        "width": 136,
+        "height": 24
+      },
+      "absoluteRenderBounds": {
+        "x": 487,
+        "y": 13580,
+        "width": 170,
+        "height": 58
+      },
+      "children": [
+        {
+          "id": "3522:1751",
+          "name": "Ellipse 3",
+          "x": 0,
+          "y": 0,
+          "width": 24,
+          "height": 24
+        },
+        {
+          "id": "3522:1752",
+          "name": "Ellipse 4",
+          "x": 56,
+          "y": 0,
+          "width": 24,
+          "height": 24
+        },
+        {
+          "id": "3522:1753",
+          "name": "Ellipse 5",
+          "x": 112,
+          "y": 0,
+          "width": 24,
+          "height": 24
+        }
+      ]
+    },
+    {
+      "id": "3522:1793",
+      "name": "Background / Gold glow",
+      "x": -66,
+      "y": 911,
+      "width": 534,
+      "height": 820,
+      "rotation": 0,
+      "absoluteBoundingBox": {
+        "x": 1943,
+        "y": 13255,
+        "width": 534,
+        "height": 820
+      },
+      "absoluteRenderBounds": {
+        "x": 2009,
+        "y": 13255,
+        "width": 402,
+        "height": 783
+      },
+      "children": [
+        {
+          "id": "3522:1794",
+          "name": "Background / Light layer 01",
+          "x": -66,
+          "y": 911,
+          "width": 534,
+          "height": 820
+        },
+        {
+          "id": "3522:1795",
+          "name": "Background / Light layer 02",
+          "x": -24,
+          "y": 863.6641616821289,
+          "width": 448,
+          "height": 536.9047241210938
+        },
+        {
+          "id": "3522:1796",
+          "name": "Background / Light layer 03",
+          "x": -24,
+          "y": 863.6641616821289,
+          "width": 448,
+          "height": 536.9047241210938
+        },
+        {
+          "id": "3522:1797",
+          "name": "Background / Light layer 04",
+          "x": -24,
+          "y": 863.6641616821289,
+          "width": 448,
+          "height": 536.9047241210938
+        },
+        {
+          "id": "3522:1798",
+          "name": "Background / Light layer 05",
+          "x": -24,
+          "y": 863.6641616821289,
+          "width": 448,
+          "height": 536.9047241210938
+        },
+        {
+          "id": "3522:1799",
+          "name": "Background / Light layer 06",
+          "x": -24,
+          "y": 863.6641616821289,
+          "width": 448,
+          "height": 536.9047241210938
+        },
+        {
+          "id": "3522:1800",
+          "name": "Background / Light layer 07",
+          "x": -24,
+          "y": 863.6641616821289,
+          "width": 448,
+          "height": 536.9047241210938
+        },
+        {
+          "id": "3522:1801",
+          "name": "Background / Light layer 08",
+          "x": -24,
+          "y": 863.6641616821289,
+          "width": 448,
+          "height": 536.9047241210938
+        },
+        {
+          "id": "3522:1802",
+          "name": "Background / Light layer 09",
+          "x": -24,
+          "y": 863.6641616821289,
+          "width": 448,
+          "height": 536.9047241210938
+        },
+        {
+          "id": "3522:1803",
+          "name": "Background / Light layer 10",
+          "x": -24,
+          "y": 863.6641616821289,
+          "width": 448,
+          "height": 536.9047241210938
+        },
+        {
+          "id": "3522:1804",
+          "name": "Background / Texture layer 11",
+          "x": -260,
+          "y": 851.146068572998,
+          "width": 816,
+          "height": 682.3357543945312
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,2 @@
+# Preserve exact snapshot bytes on every platform; SHA256 manifest depends on them.
+* -text

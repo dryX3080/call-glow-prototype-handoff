@@ -1,0 +1,47 @@
+/* Explicit webfont names prevent installed Gerbera variants from replacing the UI face. */
+@font-face{font-family:'Gerbera Call Regular';src:url('assets/fonts/gerbera-regular.otf') format('opentype');font-style:normal;font-weight:400;font-display:swap}
+@font-face{font-family:'Gerbera Call Medium';src:url('assets/fonts/gerbera-medium.otf') format('opentype');font-style:normal;font-weight:500;font-display:swap}
+@font-face{font-family:'Gerbera Call Bold';src:url('assets/fonts/gerbera-bold.otf') format('opentype');font-style:normal;font-weight:700;font-display:swap}
+:root{font-family:'Gerbera Call Regular',Arial,sans-serif;font-weight:400}
+.art{font-family:'Gerbera Call Medium',Arial,sans-serif;font-weight:500;font-synthesis:none;-webkit-font-smoothing:antialiased}
+.call-title h1{font-family:'Gerbera Call Bold',Arial,sans-serif;font-weight:700;line-height:24px}
+.control>span{font-family:'Gerbera Call Medium',Arial,sans-serif;font-weight:500;font-size:14px;line-height:18px;text-align:center;letter-spacing:0}
+.control:nth-child(1)>span,.control:nth-child(2)>span{width:69px}
+.mic-control>span{width:76px}.control:last-child>span{width:75px}
+#speaker[aria-label='Повернуть своё демовидео']+span{width:92px}
+.call-hint{font-family:'Gerbera Call Medium',Arial,sans-serif;font-weight:500;bottom:168px;line-height:20.25px;letter-spacing:-.3px}
+.call-hint.video-hint{bottom:170px;line-height:20px}
+.notice{font-family:'Gerbera Call Medium',Arial,sans-serif;font-weight:500;height:36px;min-height:36px;line-height:15px;padding:1px 16px 0}
+.preparing .notice{line-height:20.25px}
+/* Match the line box to the original 12px text frame; extra leading lowered the digits. */
+.timer-pill time{font-family:'Gerbera Call Medium',Arial,sans-serif;font-weight:500;display:block;flex:0 0 34px;width:34px;height:12px;line-height:12px;text-align:center;margin:0;padding:0;white-space:nowrap}
+.mic-halo{--breathe:.91}
+.glow-complete{transform-origin:109.727px 113.26px;transform:scale(calc(var(--breathe) + var(--wave)*.07)) rotate(var(--drift,0deg)) scaleX(var(--stretch-x,1)) scaleY(var(--stretch-y,1))!important;filter:none}
+.voice-ring{border-width:1.5px}
+.effect-definitions{position:absolute;pointer-events:none}
+.circle,.circle:hover,.circle[aria-pressed=true]#microphone,.circle:not(.end){background:transparent;border:0;box-shadow:none}
+.button-face{position:absolute;inset:0;display:block;border-radius:50%;background:white;box-shadow:inset 0 0 4px #ffffff52;transform-origin:50% 50%;pointer-events:none}
+.circle.end .button-face{background:#ff088e;box-shadow:inset 0 4px 16px #ffffff1f,inset 0 0 4px #ffffff52,0 4px 8px #804f0a0a}
+#microphone[aria-pressed=true] .button-face{border:2px solid var(--pink)}
+.circle,.call-header #back{appearance:none;-webkit-appearance:none}
+.button-icon{position:absolute;inset:0;display:grid;place-items:center;pointer-events:none;z-index:1}
+.button-icon img{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);margin:0;pointer-events:none}
+.call-header .button-face{background:transparent;box-shadow:none}
+.call-header #back{position:relative}
+.preparing-dots{opacity:0;visibility:hidden;animation:none;transition:opacity .35s ease,visibility .35s}
+.preparing .preparing-dots{opacity:1;visibility:visible;animation:none}
+.loading-ring{position:absolute;top:0;left:0;width:58px;height:58px;transform-origin:29px 21px;opacity:.2;will-change:opacity,transform}
+.loading-ring:nth-child(2){left:56px}.loading-ring:nth-child(3){left:112px}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip:rect(0,0,0,0);white-space:nowrap;border:0}
+.control>span>img,.call-hint>img,.notice>span>img{display:block;margin:0 auto;max-width:none}
+.notice>span>img{width:auto;height:auto}
+.control>span{height:18px;display:grid;place-items:center}
+.call-hint{height:40px;display:grid;place-items:center}
+.call-hint.video-hint{height:auto;display:block}
+.notice,.ended .notice{left:calc(50% + .5px);width:301px;height:36px;min-height:36px;display:grid;place-items:center;padding:0;background:transparent;gap:0;overflow:visible}
+.notice[data-state='ended']{width:183px}
+.notice[data-state='preparing']{width:auto;padding:1px 16px 0;background:white}
+#notice-visual{display:block;width:auto;height:auto;max-width:none;flex:none}
+.remote-video,.self-preview{opacity:0;visibility:hidden;pointer-events:none;transition:opacity .4s ease,visibility .4s}
+.remote-video.visible,.self-preview.visible{opacity:1;visibility:visible}
+@media(prefers-reduced-motion:reduce){.glow-complete{filter:none;transform:scale(.91)!important}.button-face{transition:none}.preparing-dots{transition:none}.loading-ring{will-change:auto}}

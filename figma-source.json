@@ -1,0 +1,13 @@
+{
+  "fileKey": "p7896b2XIPGOtu6JO7G3h6",
+  "section": "3534:3308",
+  "page": "3266:4498",
+  "canonicalSize": [402,874],
+  "screens": {"preparing":"3522:1719","connected":"3522:1757","active":"3522:1792","muted":"3560:5502","own-video":"3522:1833","both-video":"3530:3018","peer-video":"3534:3225","full-video":"3534:3145","ended":"3694:4930"},
+  "texture": {"nodeId":"3522:1804","imageHash":"2a3fd1d45b1a12fd3e6d8913cfd5618b0d307408","blend":"COLOR_DODGE","paintOpacity":0.32,"exposure":-0.07,"originalSize":[816,682.336]},
+  "mask": {"nodeId":"3522:1794","sameAsBackupNode":"3337:4547","size":[534,820],"exportSize":[582,868],"stationary":true},
+  "glow": {"group":"3524:2891","children":["3524:2892","3524:2893","3524:2894"],"originalGroupSize":[82,82]},
+  "fonts": {"family":"Gerbera","weights":[300,400,500,700,900],"title":17,"timer":13,"labels":14,"messages":15},
+  "backupCommit": "6f82df0bc59138302431a9c589627bb11e4cfa8b",
+  "newProjectId": "appgprj_6acea96c50888191804114b76934c75a"
+}

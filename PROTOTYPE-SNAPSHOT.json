@@ -1,0 +1,16 @@
+{
+  "exported_on": "2026-10-14",
+  "prototype_name": "Звонок · живой свет",
+  "approved_version": 5,
+  "reference_url": "https://call-glow-prototype.alexmanga635.chatgpt.site/",
+  "source_commit": "fcdf9f841d6bb6b404d2e4d6054f7cae9f09ab26",
+  "source_project_id_for_provenance_only": "appgprj_6acea96c50888191804114b76934c75a",
+  "saved_version_id": "appgprj_6acea96c50888191804114b76934c75a~appgver_c873f0c9a9008191901c4d6c75197f46",
+  "saved_site_archive_sha256": "141e0865155163b155fe595a38e6f19ab451be50de18f55a7e20becfcc0d8097",
+  "figma_url": "https://www.figma.com/design/p7896b2XIPGOtu6JO7G3h6/App---Design-Concept?node-id=3534-3308",
+  "source_selection": ["dist", "tests", "server.cjs", "README.md", "ENGINE-NOTES.md", "QA.md", "UI-REFINEMENTS.md", "APPROVED-HANDOFF.md", "figma-source.json"],
+  "export_path_mapping": { "README.md": "docs/ORIGINAL-README.md" },
+  "preservation": "Application source, runtime assets, settings and flow copied byte-for-byte from the approved commit. Only handoff documentation and helper commands were added.",
+  "deployment_configuration_included": false,
+  "published_site_modified_by_export": false
+}

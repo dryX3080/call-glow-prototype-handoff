@@ -1,0 +1,222 @@
+'use strict';
+const defaults=[{name:'Лаванда',colors:['#8569d7','#5e82d6']},{name:'Дымка',colors:['#777777','#777777']},{name:'Лазурь',colors:['#00bbff','#00bbff']}];
+const palettes=structuredClone(defaults),$=id=>document.getElementById(id),reducedMotion=matchMedia('(prefers-reduced-motion: reduce)'),renderers=[];
+const state={selected:0,speed:1,intensity:.32,distortion:.35,flow:.7,response:1,raysVoice:true,gradientVoice:true,sensitivity:1,paused:reducedMotion.matches,mode:'idle',level:0,syllable:0,frequency:.5};
+let animationTime=0,rayTime=0,gradientTime=0,lastFrame=0,demoTime=0,micRequest=0,micStream=null,audioContext=null,analyser=null,micSource=null,audioSamples=null,frequencySamples=null;
+let micHighpass=null,micLowpass=null;
+const micLevels={noise:.0001,reference:.012,rms:0,onset:0,hold:0};
+function resetMicLevels(){Object.assign(micLevels,{noise:.0001,reference:.012,rms:0,onset:0,hold:0});}
+// Preserve loudness differences; only the noise floor adapts during quiet input.
+function microphoneTarget(rms,dt){
+  micLevels.rms=rms;
+  if(micLevels.hold===0&&rms<micLevels.noise*3+.00015){
+    const rate=1-Math.exp(-dt/(rms<micLevels.noise?.5:1.5));
+    micLevels.noise=Math.max(.00003,micLevels.noise+(rms-micLevels.noise)*rate);
+  }
+  const openGate=Math.max(.0004,(micLevels.noise*2.5+.0001)/Math.sqrt(state.sensitivity));
+  if(rms>openGate){
+    micLevels.onset+=dt;
+    if(micLevels.onset>=.035)micLevels.hold=.14;
+  }else{micLevels.onset=0;micLevels.hold=Math.max(0,micLevels.hold-dt);}
+  if(micLevels.hold===0)return 0;
+  const signal=Math.max(0,rms-openGate);
+  const normalized=signal/micLevels.reference;
+  return 1-Math.exp(-normalized*1.1*state.sensitivity);
+}
+function updatePalette(i){renderers[i]?.setPalette(palettes[i].colors);}
+function syncControls(){
+  $('screen-select').value=state.selected;$('active-name').textContent=palettes[state.selected].name;
+  ['a','b'].forEach((k,j)=>{$('color-'+k).value=palettes[state.selected].colors[j];$('hex-'+k).value=palettes[state.selected].colors[j].toUpperCase();});
+  document.querySelectorAll('.preview').forEach((p,i)=>{p.classList.toggle('selected',i===state.selected);p.querySelector('button').setAttribute('aria-pressed',i===state.selected);});
+  for(const k of ['speed','intensity','distortion','flow','sensitivity','response']){$(k).value=state[k];$(k+'-value').value=k==='speed'||k==='sensitivity'?state[k].toFixed(1)+'×':Math.round(state[k]*100)+'%';}
+  $('rays-voice').checked=state.raysVoice;$('gradient-voice').checked=state.gradientVoice;
+  $('pause').setAttribute('aria-pressed',state.paused);$('pause').textContent=state.paused?'Продолжить':'Пауза';$('motion-status').textContent=state.paused?'Движение на паузе':'Плавное движение';
+  $('demo').setAttribute('aria-pressed',state.mode==='demo');$('demo').textContent=state.mode==='demo'?'Выключить демо':'Демо голоса';
+  $('microphone').classList.toggle('active',state.mode==='microphone');$('microphone').querySelector('span').textContent=state.mode==='microphone'?'Выключить микрофон':'Включить микрофон';
+}
+function selectScreen(i,scroll=false){state.selected=i;syncControls();if(scroll&&innerWidth<=540){const gallery=document.querySelector('.gallery'),target=document.querySelector('[data-screen="'+i+'"]'),first=gallery.firstElementChild;gallery.scrollTo({left:target.offsetLeft-first.offsetLeft,behavior:reducedMotion.matches?'instant':'smooth'});}}
+// Original Figma geometry. Only pixels move inside the stationary original alpha mask.
+class LightRenderer{
+  constructor(art,image,index){
+    this.canvas=document.createElement('canvas');this.canvas.className='scene-canvas';const scene=document.createElement('div');scene.className='masked-scene';if(index===2){scene.style.left='-95px';scene.style.top='48px';}scene.append(this.canvas);art.append(scene);
+    this.gradient=document.createElement('canvas');this.gradient.width=582;this.gradient.height=868;
+    this.gl=this.canvas.getContext('webgl',{alpha:false,antialias:false,depth:false,stencil:false,powerPreference:'low-power'});
+    if(!this.gl){this.fallback=true;this.ctx=this.canvas.getContext('2d');this.image=image;this.canvas.width=582;this.canvas.height=868;return;}
+    const gl=this.gl,vertex='attribute vec2 position;varying vec2 uv;void main(){uv=vec2((position.x+1.)*.5,(1.-position.y)*.5);gl_Position=vec4(position,0.,1.);}';
+    const fragment=`precision highp float;
+varying vec2 uv;
+uniform sampler2D gradientLayer;
+uniform sampler2D lightLayer;
+uniform vec3 colorA;
+uniform vec3 colorB;
+uniform float time;
+uniform float gradientTime;
+uniform float lightOpacity;
+uniform float warp;
+uniform float flow;
+uniform float rayVoice;
+uniform float gradientVoice;
+uniform float rayPulse;
+uniform float gradientPulse;
+uniform float frequency;
+vec3 dodge(vec3 b,vec3 l){return min(vec3(1.),b/max(vec3(.001),vec3(1.)-l));}
+void main(){
+  vec2 p=uv*vec2(582.,868.);
+  float gt=gradientTime;
+  float movement=flow+gradientVoice*.95;
+  vec2 field=(p-vec2(291.,340.))/vec2(448.,537.);
+  vec2 domain=field;
+  domain.x+=sin(field.y*3.1-gt*.30)*.25*movement;
+  domain.y+=sin(field.x*3.5+gt*.24)*.22*movement;
+  domain.x+=gradientVoice*.18*sin(field.y*4.8+gt*.83);
+  domain.y+=gradientVoice*.13*cos(field.x*4.2-gt*.71);
+  float stream=sin(domain.y*3.4-gt*.32+sin(domain.x*3.2+gt*.21)*1.1);
+  float eddy=cos(domain.x*3.0-domain.y*1.5+gt*.26);
+  float movingBlend=clamp(.50+.32*stream+.18*eddy,0.,1.);
+  float originalBlend=clamp((p.y-71.336)/536.905,0.,1.);
+  float blend=mix(originalBlend,movingBlend,clamp(movement,0.,1.));
+  vec3 pigment=mix(colorB,colorA,blend);
+  float sameColor=1.-smoothstep(.025,.22,length(colorA-colorB));
+  float brightness=flow*(.05+sameColor*.14)*(stream*.68+eddy*.32)+gradientVoice*.02*stream;
+  pigment=mix(pigment,vec3(1.),max(brightness,0.));
+  pigment*=1.+min(brightness,0.);
+  vec2 g=uv;
+  g=(g-vec2(.50,.40))/(1.+gradientVoice*.24+gradientPulse*.04)+vec2(.50,.40);
+  g.x+=sin(gt*.24)*.035*movement;
+  g.y+=cos(gt*.19)*.025*movement;
+  g.x+=sin(uv.y*4.0+gt*.27)*.020*movement;
+  g.y+=cos(uv.x*3.7-gt*.22)*.016*movement;
+  float envelope=texture2D(gradientLayer,clamp(g,0.,1.)).a;
+  envelope=clamp(envelope*(1.+movement*.08*stream+gradientVoice*.18),0.,1.);
+  vec3 base=mix(vec3(244./255.),pigment,envelope);
+  float bloomWave=.5+.5*sin(domain.y*4.6-gt*.95+sin(domain.x*3.+gt*.4)*.9);
+  vec2 glowDelta=(uv-vec2(.38+.19*sin(gt*.69),.40+.16*cos(gt*.53)))*vec2(2.4,2.);
+  float glowSpot=exp(-dot(glowDelta,glowDelta)*2.);
+  vec3 milk=vec3(.985,.98,1.);
+  float milkAmount=clamp(gradientVoice*(.16+.38*bloomWave+.24*glowSpot)+gradientPulse*.14*bloomWave,0.,.68);
+  base=mix(base,milk,milkAmount*envelope);
+  vec2 s=(p-vec2(-170.,83.854))/vec2(816.,682.336),q=s-vec2(.5);
+  float angle=sin(time*.19)*.009*(1.+rayVoice*.6);
+  q=mat2(cos(angle),-sin(angle),sin(angle),cos(angle))*q;
+  q/=1.+(1.-cos(time*.21))*.012+rayVoice*.045;
+  s=q+vec2(.5);
+  s.x+=sin(time*.27)*.012;
+  s.y+=sin(time*.17)*.009;
+  s.x+=sin(s.y*7.+time*.65)*(warp*.011)*sin(time*.29);
+  s.y+=sin(s.x*8.+time*.39)*(warp*.005)*sin(time*.21);
+  float axis=.52+.035*sin(time*.21);
+  s.x=axis+(s.x-axis)/(1.+rayVoice*.20+rayPulse*.025);
+  float wave=sin(s.y*7.3-time*1.35+frequency*.8);
+  s.x+=(rayVoice*(.028+warp*.014)+rayPulse*.012)*wave*smoothstep(.05,.9,s.y);
+  s.y+=rayVoice*.008*sin(s.x*5.+time*.65);
+  float inside=step(0.,s.x)*step(s.x,1.)*step(0.,s.y)*step(s.y,1.);
+  vec3 light=texture2D(lightLayer,clamp(s,0.,1.)).rgb*inside;
+  float lightDetail=smoothstep(.10,.60,dot(light,vec3(.2126,.7152,.0722)));
+  float travelingBand=.5+.5*sin(s.y*9.-time*1.55);
+  float opacity=clamp(lightOpacity*(1.+sin(time*.35)*.045+rayVoice*(.80+frequency*.08)+rayPulse*.15),0.,.78);
+  vec3 composite=mix(base,dodge(base,light),opacity);
+  float rayMilk=clamp((rayVoice*.12+rayPulse*.07)*lightDetail*travelingBand,0.,.28)*clamp(lightOpacity/.32,0.,1.);
+  gl_FragColor=vec4(mix(composite,milk,rayMilk),1.);
+}`;
+    const compile=(type,src)=>{const sh=gl.createShader(type);gl.shaderSource(sh,src);gl.compileShader(sh);if(!gl.getShaderParameter(sh,gl.COMPILE_STATUS))throw Error(gl.getShaderInfoLog(sh));return sh;};
+    this.program=gl.createProgram();gl.attachShader(this.program,compile(gl.VERTEX_SHADER,vertex));gl.attachShader(this.program,compile(gl.FRAGMENT_SHADER,fragment));gl.linkProgram(this.program);if(!gl.getProgramParameter(this.program,gl.LINK_STATUS))throw Error(gl.getProgramInfoLog(this.program));gl.useProgram(this.program);
+    const buffer=gl.createBuffer();gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);const loc=gl.getAttribLocation(this.program,'position');gl.enableVertexAttribArray(loc);gl.vertexAttribPointer(loc,2,gl.FLOAT,false,0,0);
+    this.uniforms=Object.fromEntries(['time','gradientTime','lightOpacity','warp','flow','rayVoice','gradientVoice','rayPulse','gradientPulse','frequency','colorA','colorB'].map(k=>[k,gl.getUniformLocation(this.program,k)]));this.textures=[];
+    for(let n=0;n<2;n++){gl.activeTexture(gl.TEXTURE0+n);const t=gl.createTexture();this.textures.push(t);gl.bindTexture(gl.TEXTURE_2D,t);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MIN_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_MAG_FILTER,gl.LINEAR);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_S,gl.CLAMP_TO_EDGE);gl.texParameteri(gl.TEXTURE_2D,gl.TEXTURE_WRAP_T,gl.CLAMP_TO_EDGE);gl.uniform1i(gl.getUniformLocation(this.program,n?'lightLayer':'gradientLayer'),n);if(n)gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,image);}
+    this.canvas.addEventListener('webglcontextlost',e=>{e.preventDefault();this.lost=true;$('render-status').textContent='Графика приостановлена браузером';});this.canvas.addEventListener('webglcontextrestored',()=>window.location.reload());this.resize();
+  }
+  resize(){if(this.fallback)return;const scale=Math.min(devicePixelRatio,1.5);this.canvas.width=Math.round(582*scale);this.canvas.height=Math.round(868*scale);this.gl.viewport(0,0,this.canvas.width,this.canvas.height);}
+  setPalette(colors){
+    this.colors=colors.map(hex=>[1,3,5].map(i=>parseInt(hex.slice(i,i+2),16)/255));
+    const c=this.gradient.getContext('2d');c.clearRect(0,0,582,868);c.save();c.filter='blur(94px)';
+    const g=c.createLinearGradient(0,71.336,0,608.241);g.addColorStop(0,colors[1]);g.addColorStop(1,colors[0]);c.fillStyle=g;c.beginPath();c.roundRect(66,71.336,448,536.905,[0,0,40,40]);c.fill();c.restore();
+    if(this.gl){const gl=this.gl;gl.useProgram(this.program);gl.activeTexture(gl.TEXTURE0);gl.bindTexture(gl.TEXTURE_2D,this.textures[0]);gl.texImage2D(gl.TEXTURE_2D,0,gl.RGBA,gl.RGBA,gl.UNSIGNED_BYTE,this.gradient);}this.draw();
+  }
+  draw(){
+    if(this.lost)return;
+    if(this.fallback){
+      const c=this.ctx,voice=voiceResponse(),gv=voice.gradient,rv=voice.rays,gp=voice.gradientPulse,rp=voice.rayPulse,movement=state.flow+gv*.95;
+      this.flowCanvas??=document.createElement('canvas');this.flowCanvas.width=582;this.flowCanvas.height=868;
+      const f=this.flowCanvas.getContext('2d'),a=this.colors[0],b=this.colors[1],css=v=>'rgb('+v.map(x=>Math.round(x*255)).join(',')+')';
+      const blend=(x,y)=>{const st=Math.sin(y*3.4-gradientTime*.32+Math.sin(x*3.2+gradientTime*.21)*1.1),ed=Math.cos(x*3-y*1.5+gradientTime*.26);return Math.max(0,Math.min(1,.5+.32*st+.18*ed));};
+      const g=f.createLinearGradient(150+Math.sin(gradientTime*.24)*90*movement,70,410+Math.cos(gradientTime*.19)*80*movement,630);
+      for(let n=0;n<=12;n++){const y=n/12,weight=y*(1-Math.min(movement,1))+blend(.3,y)*Math.min(movement,1);const same=Math.hypot(...a.map((v,j)=>v-b[j]))<.025;const bright=movement*(same?.11:.04)*Math.sin(y*4-gradientTime*.32);g.addColorStop(y,css(a.map((v,j)=>Math.max(0,Math.min(1,(b[j]*(1-weight)+v*weight)*(1+bright))))));}
+      f.fillStyle=g;f.fillRect(0,0,582,868);
+      if(gv>0){const milk=f.createRadialGradient(220+110*Math.sin(gradientTime*.69),345+100*Math.cos(gradientTime*.53),20,291,360,390);milk.addColorStop(0,'rgba(251,250,255,'+Math.min(.68,gv*.66+gp*.14)+')');milk.addColorStop(1,'rgba(251,250,255,0)');f.fillStyle=milk;f.fillRect(0,0,582,868);}
+      f.globalCompositeOperation='destination-in';f.drawImage(this.gradient,0,0);f.globalCompositeOperation='source-over';
+      c.clearRect(0,0,582,868);c.fillStyle='#f4f4f4';c.fillRect(0,0,582,868);c.save();c.translate(291,347);c.scale(1+gv*.24+gp*.04,1+gv*.24+gp*.04);c.drawImage(this.flowCanvas,-291,-347);c.restore();
+      c.save();c.globalCompositeOperation='color-dodge';c.globalAlpha=Math.min(.78,state.intensity*(1+rv*.8+rp*.15));c.translate(238+Math.sin(rayTime*.27)*12,425);c.rotate(Math.sin(rayTime*.19)*.009);c.scale(1+rv*.20+rp*.025,1+rv*.045);
+      for(let n=0;n<64;n++){const y=n/64,h=this.image.height/64,offset=(rv*(23+state.distortion*11)+rp*10)*Math.sin(y*7.3-rayTime*1.35);c.drawImage(this.image,0,n*h,this.image.width,h,-408+offset,-341.168+y*682.336,816,682.336/64+.25);}
+      c.restore();return;
+    }
+    const gl=this.gl,voice=voiceResponse();gl.useProgram(this.program);gl.uniform1f(this.uniforms.time,rayTime);gl.uniform1f(this.uniforms.gradientTime,gradientTime);gl.uniform1f(this.uniforms.flow,state.flow);gl.uniform3fv(this.uniforms.colorA,this.colors[0]);gl.uniform3fv(this.uniforms.colorB,this.colors[1]);gl.uniform1f(this.uniforms.lightOpacity,state.intensity);gl.uniform1f(this.uniforms.warp,state.distortion);gl.uniform1f(this.uniforms.rayVoice,voice.rays);gl.uniform1f(this.uniforms.gradientVoice,voice.gradient);gl.uniform1f(this.uniforms.rayPulse,voice.rayPulse);gl.uniform1f(this.uniforms.gradientPulse,voice.gradientPulse);gl.uniform1f(this.uniforms.frequency,state.frequency);gl.drawArrays(gl.TRIANGLES,0,6);
+  }
+}
+// Slow speech body and a faster syllable envelope drive the same shader for microphone and demo.
+function voiceResponse(){
+  const body=Math.min(1.35,state.response*(1.45*state.level/(1.+.45*state.level)+.45*state.syllable));
+  const pulse=Math.min(1,state.response*state.syllable);
+  return{rays:state.raysVoice?body:0,gradient:state.gradientVoice?body:0,rayPulse:state.raysVoice?pulse:0,gradientPulse:state.gradientVoice?pulse:0};
+}
+function stopAudio(){
+  micRequest++;micStream?.getTracks().forEach(t=>t.stop());micStream=null;micSource?.disconnect();micSource=null;micHighpass?.disconnect();micHighpass=null;micLowpass?.disconnect();micLowpass=null;analyser=null;audioSamples=null;frequencySamples=null;resetMicLevels();
+  const c=audioContext;audioContext=null;if(c&&c.state!=='closed')void c.close().catch(()=>{});state.mode='idle';$('microphone').disabled=false;syncControls();$('voice-status').textContent='Спокойное движение';
+}
+async function toggleMicrophone(){
+  if(state.mode==='microphone'){stopAudio();return;}stopAudio();
+  if(!window.isSecureContext||!navigator.mediaDevices?.getUserMedia){$('voice-status').textContent='Микрофон доступен через HTTPS или localhost. Можно включить демо.';return;}
+  const request=++micRequest;$('microphone').disabled=true;$('microphone').querySelector('span').textContent='Разреши микрофон…';let candidate=null,context=null;
+  try{
+    context=new(window.AudioContext||window.webkitAudioContext)();await context.resume();candidate=await navigator.mediaDevices.getUserMedia({audio:{echoCancellation:true,noiseSuppression:true,autoGainControl:false},video:false});
+    if(request!==micRequest){candidate.getTracks().forEach(t=>t.stop());await context.close();return;}
+    await context.resume();
+    if(request!==micRequest){candidate.getTracks().forEach(t=>t.stop());await context.close();return;}
+    audioContext=context;micStream=candidate;resetMicLevels();analyser=context.createAnalyser();analyser.fftSize=1024;analyser.smoothingTimeConstant=.7;micSource=context.createMediaStreamSource(candidate);
+    micHighpass=context.createBiquadFilter();micHighpass.type='highpass';micHighpass.frequency.value=80;micHighpass.Q.value=.707;
+    micLowpass=context.createBiquadFilter();micLowpass.type='lowpass';micLowpass.frequency.value=6000;micLowpass.Q.value=.707;
+    micSource.connect(micHighpass);micHighpass.connect(micLowpass);micLowpass.connect(analyser);
+    audioSamples=new Float32Array(analyser.fftSize);frequencySamples=new Uint8Array(analyser.frequencyBinCount);
+    candidate.getAudioTracks().forEach(t=>t.onended=()=>{if(micStream===candidate){stopAudio();$('voice-status').textContent='Микрофон отключён. Можно включить демо.';}});state.mode='microphone';$('microphone').disabled=false;syncControls();$('voice-status').textContent='Микрофон включён · говори';
+  }catch(e){candidate?.getTracks().forEach(t=>t.stop());if(context&&context.state!=='closed')await context.close().catch(()=>{});if(request!==micRequest)return;stopAudio();$('voice-status').textContent=e.name==='NotAllowedError'?'Доступ к микрофону закрыт. Включи демо голоса.':e.name==='NotFoundError'?'Микрофон не найден. Включи демо голоса.':'Микрофон недоступен. Включи демо голоса.';}
+}
+function toggleDemo(){const wasDemo=state.mode==='demo';stopAudio();if(!wasDemo){state.mode='demo';demoTime=0;$('voice-status').textContent='Демо · имитация речи';}syncControls();}
+function updateAudio(dt){
+  let target=0;
+  if(state.mode==='microphone'&&analyser){
+    analyser.getFloatTimeDomainData(audioSamples);let mean=0,sum=0;for(const x of audioSamples)mean+=x;mean/=audioSamples.length;
+    for(const x of audioSamples)sum+=(x-mean)*(x-mean);
+    target=microphoneTarget(Math.sqrt(sum/audioSamples.length),dt);
+    analyser.getByteFrequencyData(frequencySamples);let weighted=0,total=0;for(let i=2;i<100;i++){weighted+=frequencySamples[i]*i;total+=frequencySamples[i];}state.frequency=total?Math.min(1,weighted/total/65):.5;
+  }
+  else if(state.mode==='demo'){demoTime+=dt;const phrase=demoTime%6.7,envelope=phrase<4.3?Math.pow(Math.max(0,Math.sin(phrase*2.4)),.6):0;target=Math.min(1,envelope*(.25+.36*Math.pow(Math.sin(demoTime*8.1),2)+.15*Math.pow(Math.sin(demoTime*13.9),2))*state.sensitivity);state.frequency=.5+.25*Math.sin(demoTime*1.2);}
+  const smoothing=1-Math.exp(-dt/(target>state.level ? .075 : .55));state.level+=(target-state.level)*smoothing;if(state.level<.0001)state.level=0;
+  const syllableSmoothing=1-Math.exp(-dt/(target>state.syllable ? .04 : .14));state.syllable+=(target-state.syllable)*syllableSmoothing;if(state.syllable<.0001)state.syllable=0;
+  const percent=Math.round(state.level*100);$('level-fill').style.width=percent+'%';document.querySelector('.level').setAttribute('aria-valuenow',percent);
+  if(state.mode==='microphone')$('voice-status').textContent=state.level>.10?'Ты говоришь':'Микрофон включён · слушаю';
+}
+function frame(ms){const dt=lastFrame?Math.min((ms-lastFrame)/1000,.05):0;lastFrame=ms;updateAudio(dt);if(!state.paused&&!document.hidden){const voice=voiceResponse();animationTime+=dt*state.speed;rayTime+=dt*state.speed*(1.+voice.rays*2.2);gradientTime+=dt*state.speed*(1.+voice.gradient*1.6);renderers.forEach(r=>r.draw());}requestAnimationFrame(frame);}
+function reset(){palettes.splice(0,3,...structuredClone(defaults));stopAudio();Object.assign(state,{selected:0,speed:1,intensity:.32,distortion:.35,flow:.7,response:1,raysVoice:true,gradientVoice:true,sensitivity:1,level:0,syllable:0,frequency:.5,paused:reducedMotion.matches});animationTime=0;rayTime=0;gradientTime=0;syncControls();renderers.forEach((r,i)=>r.setPalette(palettes[i].colors));}
+function snapshot(){const voice=voiceResponse();return{...state,time:animationTime,rayTime,gradientTime,rayVoiceLevel:voice.rays,gradientVoiceLevel:voice.gradient,rayPulse:voice.rayPulse,gradientPulse:voice.gradientPulse,palettes:structuredClone(palettes),renderers:renderers.map(r=>({mode:r.fallback?'canvas2d':'webgl',width:r.canvas.width,height:r.canvas.height,lost:!!r.lost})),microphoneTracks:micStream?micStream.getTracks().map(t=>t.readyState):[]};}
+function configure(input){
+  if(!input||typeof input!=='object'||Array.isArray(input))throw Error('Нужен объект настроек');
+  const allowed=['screen','colors','speed','intensity','distortion','flow','response','raysVoice','gradientVoice','sensitivity','paused'];if(Object.keys(input).some(k=>!allowed.includes(k)))throw Error('Неизвестная настройка');
+  const index=input.screen??state.selected;if(!Number.isInteger(index)||index<0||index>2)throw Error('Экран должен быть 0, 1 или 2');
+  if(input.colors&&(!Array.isArray(input.colors)||input.colors.length!==2||input.colors.some(c=>typeof c!=='string'||!/^#[0-9a-f]{6}$/i.test(c))))throw Error('Нужны два цвета #RRGGBB');
+  const bounds={speed:[0,2],intensity:[0,.65],distortion:[0,1],flow:[0,1],response:[0,1.5],sensitivity:[.25,6]};for(const[k,[min,max]]of Object.entries(bounds))if(k in input&&(!Number.isFinite(input[k])||input[k]<min||input[k]>max))throw Error('Недопустимое значение '+k);for(const k of ['paused','raysVoice','gradientVoice'])if(k in input&&typeof input[k]!=='boolean')throw Error(k+' должен быть boolean');
+  state.selected=index;if(input.colors){palettes[index].colors=[...input.colors];updatePalette(index);}for(const k of [...Object.keys(bounds),'paused','raysVoice','gradientVoice'])if(k in input)state[k]=input[k];syncControls();renderers.forEach(r=>r.draw());return snapshot();
+}
+window.lightLab={configure,snapshot,toggleDemo,reset};
+document.querySelectorAll('.preview').forEach((p,i)=>p.querySelector('button').onclick=()=>selectScreen(i));$('screen-select').onchange=e=>selectScreen(+e.target.value,true);
+['a','b'].forEach((k,j)=>$('color-'+k).oninput=e=>{palettes[state.selected].colors[j]=e.target.value;updatePalette(state.selected);$('hex-'+k).value=e.target.value.toUpperCase();});
+for(const k of ['speed','intensity','distortion','flow','sensitivity','response'])$(k).oninput=e=>{state[k]=+e.target.value;syncControls();if(state.paused)renderers.forEach(r=>r.draw());};
+for(const [id,key]of [['rays-voice','raysVoice'],['gradient-voice','gradientVoice']])$(id).onchange=e=>{state[key]=e.target.checked;syncControls();if(state.paused)renderers.forEach(r=>r.draw());};
+$('hide-panel').onclick=()=>{const hidden=document.body.classList.toggle('clean');$('hide-panel').textContent=hidden?'Показать панель':'Скрыть панель';};$('pause').onclick=()=>{state.paused=!state.paused;syncControls();};$('reset').onclick=reset;$('microphone').onclick=toggleMicrophone;$('demo').onclick=toggleDemo;
+const resize=new ResizeObserver(entries=>entries.forEach(e=>{e.target.querySelector('.art').style.transform='scale('+e.contentRect.width/402+')';}));document.querySelectorAll('.phone').forEach(p=>resize.observe(p));reducedMotion.addEventListener('change',e=>{if(e.matches){state.paused=true;syncControls();}});
+const gallery=document.querySelector('.gallery');let scrollTimer;gallery.addEventListener('scroll',()=>{clearTimeout(scrollTimer);scrollTimer=setTimeout(()=>{if(innerWidth>540)return;const center=gallery.getBoundingClientRect().left+gallery.clientWidth/2;let nearest=0,distance=Infinity;document.querySelectorAll('.preview').forEach((p,i)=>{const r=p.getBoundingClientRect(),d=Math.abs(r.left+r.width/2-center);if(d<distance){distance=d;nearest=i;}});if(nearest!==state.selected)selectScreen(nearest);},120);},{passive:true});
+addEventListener('pagehide',stopAudio);document.addEventListener('visibilitychange',()=>{lastFrame=0;if(document.hidden&&state.mode==='microphone')stopAudio();});
+async function init(){
+  syncControls();try{const image=new Image();image.src='assets/light-texture.png';await image.decode();const mask=new Image();mask.src='assets/light-mask.svg';await mask.decode();document.querySelectorAll('.art').forEach((art,i)=>{const r=new LightRenderer(art,image,i);renderers.push(r);r.setPalette(palettes[i].colors);});$('render-status').textContent=renderers.some(r=>r.fallback)?'Свет готов · упрощённое движение':'Свет готов';requestAnimationFrame(frame);}catch(e){$('render-status').textContent='Не удалось загрузить свет. Обнови страницу.';console.error(e);}
+  if(document.modelContext?.registerTool){const lifecycle=new AbortController();try{await document.modelContext.registerTool({name:'configure_light_scene',title:'Настроить свет',description:'Изменить палитру экрана и параметры движения света.',annotations:{readOnlyHint:false,untrustedContentHint:false},inputSchema:{type:'object',properties:{screen:{type:'integer',minimum:0,maximum:2},colors:{type:'array',minItems:2,maxItems:2,items:{type:'string',pattern:'^#[0-9a-fA-F]{6}$'}},speed:{type:'number',minimum:0,maximum:2},intensity:{type:'number',minimum:0,maximum:.65},distortion:{type:'number',minimum:0,maximum:1},flow:{type:'number',minimum:0,maximum:1},response:{type:'number',minimum:0,maximum:1.5},raysVoice:{type:'boolean'},gradientVoice:{type:'boolean'},sensitivity:{type:'number',minimum:.25,maximum:6},paused:{type:'boolean'}},additionalProperties:false},execute:configure},{signal:lifecycle.signal});addEventListener('pagehide',()=>lifecycle.abort(),{once:true});}catch(e){console.info('WebMCP недоступен',e);}}
+}init();
+
+

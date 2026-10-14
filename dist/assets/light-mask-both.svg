@@ -1,0 +1,30 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="582" height="868" viewBox="0 0 582 868" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Background / Light layer 01" filter="url(#filter0_f_0_134)">
+<path d="M24 24H558V804C558 826.091 540.091 844 518 844H64C41.9086 844 24 826.091 24 804V24Z" fill="url(#paint0_linear_0_134)"/>
+</g>
+<defs>
+<filter id="filter0_f_0_134" x="0" y="0" width="582" height="868" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feBlend mode="normal" in="SourceGraphic" in2="BackgroundImageFix" result="shape"/>
+<feGaussianBlur stdDeviation="12" result="effect1_foregroundBlur_0_134"/>
+</filter>
+<linearGradient id="paint0_linear_0_134" x1="232.957" y1="1841.51" x2="232.957" y2="-236.62" gradientUnits="userSpaceOnUse">
+<stop offset="0.418331" stop-color="#D9D9D9" stop-opacity="0"/>
+<stop offset="0.469223" stop-color="#D8D8D8" stop-opacity="0.01"/>
+<stop offset="0.510638" stop-color="#D6D6D6" stop-opacity="0.0324148"/>
+<stop offset="0.544033" stop-color="#D2D2D2" stop-opacity="0.0704"/>
+<stop offset="0.570867" stop-color="#CDCDCD" stop-opacity="0.120652"/>
+<stop offset="0.592598" stop-color="#C6C6C6" stop-opacity="0.181481"/>
+<stop offset="0.610683" stop-color="#BFBFBF" stop-opacity="0.2512"/>
+<stop offset="0.626581" stop-color="#B8B8B8" stop-opacity="0.328119"/>
+<stop offset="0.64175" stop-color="#AFAFAF" stop-opacity="0.410548"/>
+<stop offset="0.657648" stop-color="#A6A6A6" stop-opacity="0.4968"/>
+<stop offset="0.675734" stop-color="#9D9D9D" stop-opacity="0.585185"/>
+<stop offset="0.697464" stop-color="#949494" stop-opacity="0.674015"/>
+<stop offset="0.724298" stop-color="#8B8B8B" stop-opacity="0.7616"/>
+<stop offset="0.757693" stop-color="#838383" stop-opacity="0.846252"/>
+<stop offset="0.799108" stop-color="#7B7B7B" stop-opacity="0.926281"/>
+<stop offset="0.85" stop-color="#737373"/>
+</linearGradient>
+</defs>
+</svg>

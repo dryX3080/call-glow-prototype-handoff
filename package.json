@@ -1,0 +1,14 @@
+{
+  "name": "call-glow-prototype-handoff",
+  "version": "5.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Frozen approved call prototype v5 and developer handoff",
+  "engines": { "node": ">=20" },
+  "scripts": {
+    "start": "node server.cjs",
+    "verify:snapshot": "node scripts/verify-snapshot.mjs",
+    "test:audio": "node tests/audio-check.mjs",
+    "test": "node scripts/verify-snapshot.mjs && node scripts/check-syntax.mjs && node tests/audio-check.mjs"
+  }
+}

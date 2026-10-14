@@ -1,0 +1,617 @@
+{
+  "version": 1,
+  "approved_version": 5,
+  "source_commit": "fcdf9f841d6bb6b404d2e4d6054f7cae9f09ab26",
+  "algorithm": "SHA256",
+  "files": [
+    {
+      "path": "APPROVED-HANDOFF.md",
+      "source_path": "APPROVED-HANDOFF.md",
+      "bytes": 12310,
+      "sha256": "41ab0deef35d2ab0797364f2bf0869edb21274ca44fd3b17bfbcd31e41413d38",
+      "source_git_blob": "cfe0735ec02c71cf9cc7fe7a67178d0b96c1cd47"
+    },
+    {
+      "path": "ENGINE-NOTES.md",
+      "source_path": "ENGINE-NOTES.md",
+      "bytes": 6147,
+      "sha256": "08c03bfc0ff3c890d3d205d1cd069b6c31865c8882cf6d7fe81b737914191a9b",
+      "source_git_blob": "a263f3eb4d23198d185414aae51c95aa217c4842"
+    },
+    {
+      "path": "QA.md",
+      "source_path": "QA.md",
+      "bytes": 2932,
+      "sha256": "735096f76c0f38ec47e7e6404a9bf768af7465872de2e702bcc91221ffa4a99a",
+      "source_git_blob": "b4958c363c5428797b0df25b487bed3729effc1f"
+    },
+    {
+      "path": "docs/ORIGINAL-README.md",
+      "source_path": "README.md",
+      "bytes": 4567,
+      "sha256": "84a71ccc58f78ef0ea7a373b73f58b2b6e3baeba223a94c9c01a9b4150990598",
+      "source_git_blob": "240ad20a72384a7a1788686873d19e4453642dbf"
+    },
+    {
+      "path": "UI-REFINEMENTS.md",
+      "source_path": "UI-REFINEMENTS.md",
+      "bytes": 6572,
+      "sha256": "d2842a57a5ae5b17b7af2ef3022d65055edb91475b38157fd25d803a19710b96",
+      "source_git_blob": "7b7af9766a1a4ad7720b840815a7a761b0787a70"
+    },
+    {
+      "path": "dist/app.js",
+      "source_path": "dist/app.js",
+      "bytes": 26943,
+      "sha256": "b4202e470c0d7f5f71c001d5a2de518df05daf5998529e176d64c17bdbbb9fa8",
+      "source_git_blob": "2fcefe347cf5aa8d7794fe9c5de0af4332c5b844"
+    },
+    {
+      "path": "dist/assets/ASSETS.md",
+      "source_path": "dist/assets/ASSETS.md",
+      "bytes": 3131,
+      "sha256": "32773f18925330f913ae792676f13b3e134543361883247c096b1c9ef93af651",
+      "source_git_blob": "9ca4c2576422423eb49dbc8d55ba654ea4f81e4c"
+    },
+    {
+      "path": "dist/assets/assets-manifest.json",
+      "source_path": "dist/assets/assets-manifest.json",
+      "bytes": 44201,
+      "sha256": "7c59cf73f637a4882ea2c6715013fa24ae58f340b322682bdb2400650a48cd69",
+      "source_git_blob": "42a4f7f8f541062138d0a43fcca247f100dcd3fa"
+    },
+    {
+      "path": "dist/assets/back-original.svg",
+      "source_path": "dist/assets/back-original.svg",
+      "bytes": 252,
+      "sha256": "f2ad5d2df9eed43bac6107e5d787f4855bae5bb2811485c8d0181a490d8827a5",
+      "source_git_blob": "ab1e4de1bc187bd5068ba25aac4d46d05db5b786"
+    },
+    {
+      "path": "dist/assets/battery-black-both.svg",
+      "source_path": "dist/assets/battery-black-both.svg",
+      "bytes": 533,
+      "sha256": "00b3bc4214550e2d311329783fbf53a4db4b660f406a9e1753232ddd0b204e83",
+      "source_git_blob": "758a7dd1f700d222e5d87fdf8c9b42e554a4027b"
+    },
+    {
+      "path": "dist/assets/battery-black.svg",
+      "source_path": "dist/assets/battery-black.svg",
+      "bytes": 533,
+      "sha256": "7908a88465d9007f70e0b197e27e76178696ae017e8ece1a03f9c65013960aa6",
+      "source_git_blob": "0f3e5ec06a4ad522fa910aefed0ecb0107610d74"
+    },
+    {
+      "path": "dist/assets/camera-local-3522-1833.png",
+      "source_path": "dist/assets/camera-local-3522-1833.png",
+      "bytes": 333525,
+      "sha256": "b80d15c1d51bab87ae0141b31b4a86d67e307b2b5a3147690b9ebfe77b986698",
+      "source_git_blob": "f7b0f965b95d28d12eac19aeba7b0aca49c7da38"
+    },
+    {
+      "path": "dist/assets/camera-remote-both.png",
+      "source_path": "dist/assets/camera-remote-both.png",
+      "bytes": 1472428,
+      "sha256": "961ad74637050dd4d6ef8acad0f0107aa58888db1cf2594f7813c24cecbd0c81",
+      "source_git_blob": "c049690a2349e17bfd178be79d8cc3c0492a0625"
+    },
+    {
+      "path": "dist/assets/cellular-black-both.svg",
+      "source_path": "dist/assets/cellular-black-both.svg",
+      "bytes": 1171,
+      "sha256": "b0e72171ae1ed229b341e5021e927bea535cf7c941c4f311e38713696c272f0d",
+      "source_git_blob": "cdd1edcb5ee8c2e842b6555e5f50967c7d56bcde"
+    },
+    {
+      "path": "dist/assets/cellular-black.svg",
+      "source_path": "dist/assets/cellular-black.svg",
+      "bytes": 1171,
+      "sha256": "c07cfb994154179f5ae55a7a85656d29e9da7aa70cc8a214a69bce772ce13c7a",
+      "source_git_blob": "9a9f15e52fee8560a59147c8b351afb77ec97d8e"
+    },
+    {
+      "path": "dist/assets/chevron-left.svg",
+      "source_path": "dist/assets/chevron-left.svg",
+      "bytes": 784,
+      "sha256": "1837da1c0d1c5ec154f6af49d5700211755f074cb43b8e984d47abf616040a32",
+      "source_git_blob": "0c91d0ef9da9fe9d8717352751de0c1d5fc37dc0"
+    },
+    {
+      "path": "dist/assets/dynamic-island.png",
+      "source_path": "dist/assets/dynamic-island.png",
+      "bytes": 426690,
+      "sha256": "5b5219661fea8955d72e5e9f0d6c81b6b0631f86f57967b66fb10a614e940763",
+      "source_git_blob": "43e1563445f52e3eaddf1070cbef14f7dd7451bd"
+    },
+    {
+      "path": "dist/assets/end-call.svg",
+      "source_path": "dist/assets/end-call.svg",
+      "bytes": 775,
+      "sha256": "3e7cee89df8252d36fbe4fe504fb183721e16041dbeaae73038f087242852f1d",
+      "source_git_blob": "6de230e9d1078865aa90a950ef03aba55ba9c505"
+    },
+    {
+      "path": "dist/assets/flip-camera.svg",
+      "source_path": "dist/assets/flip-camera.svg",
+      "bytes": 1636,
+      "sha256": "a7978c476b1319a5c270f2a413c32cb378c3d60da14622e8b06cec3095f535da",
+      "source_git_blob": "085ab0936d323fb9b10fb6855ffe771db7dc0872"
+    },
+    {
+      "path": "dist/assets/fonts/gerbera-black.otf",
+      "source_path": "dist/assets/fonts/gerbera-black.otf",
+      "bytes": 211484,
+      "sha256": "db2ab47a4278900227b65ab9faba75e208515f717b719ff1d555f5413ca0297d",
+      "source_git_blob": "32eeed19ff995ed6b572e95f27a8e580032ea1ec"
+    },
+    {
+      "path": "dist/assets/fonts/gerbera-bold.otf",
+      "source_path": "dist/assets/fonts/gerbera-bold.otf",
+      "bytes": 210768,
+      "sha256": "7e3d5024c042d7449311a40336f84414f80c6cb4847b5cad126321f5776b1a28",
+      "source_git_blob": "291b2c21288c30830bb1ab8157f457cfe78fdb07"
+    },
+    {
+      "path": "dist/assets/fonts/gerbera-light.otf",
+      "source_path": "dist/assets/fonts/gerbera-light.otf",
+      "bytes": 187636,
+      "sha256": "4b21065a6fd938b40c8df68dbe5023d1124743f512e1ccc86fc40dac6b97821d",
+      "source_git_blob": "4427df74260ecd5a548d4cbde54bb329d7294e73"
+    },
+    {
+      "path": "dist/assets/fonts/gerbera-medium.otf",
+      "source_path": "dist/assets/fonts/gerbera-medium.otf",
+      "bytes": 210880,
+      "sha256": "e13f0a5461c6594e81cda637e697f56ee54c0ff051c496f027ae02e7c54c02b3",
+      "source_git_blob": "5d4e94eb1f34956c95dab29725459bd108796076"
+    },
+    {
+      "path": "dist/assets/fonts/gerbera-regular.otf",
+      "source_path": "dist/assets/fonts/gerbera-regular.otf",
+      "bytes": 204956,
+      "sha256": "41c5e1ac233b33769e1fff8077caece0caf9086d165b3f23f390200cab69e6d2",
+      "source_git_blob": "cde34d2839b473fa1b9f111e0de72be6fc91f44f"
+    },
+    {
+      "path": "dist/assets/glow-button.png",
+      "source_path": "dist/assets/glow-button.png",
+      "bytes": 60556,
+      "sha256": "cb3f385205f67ae9bc7fc161be9095ff3c54985c0912963fb9525497e36d82d0",
+      "source_git_blob": "52ad5526403977171cbe9902c95a5d1755ed0dd2"
+    },
+    {
+      "path": "dist/assets/glow-button.svg",
+      "source_path": "dist/assets/glow-button.svg",
+      "bytes": 3549,
+      "sha256": "bed1c6b594b16dc04cd181292efbe61d4a4fd2c010c327f94641c6ba263d08b2",
+      "source_git_blob": "ba276b400515456aa0d9b186fe088affa2efbf0d"
+    },
+    {
+      "path": "dist/assets/glow-complete.png",
+      "source_path": "dist/assets/glow-complete.png",
+      "bytes": 76260,
+      "sha256": "8bfcdb73770f54f1c3d456291d0c69bce663b0e76a0c21c850ea768c7a54a124",
+      "source_git_blob": "2d6ede72adf6e971fff0e118a2de1368b84cbae5"
+    },
+    {
+      "path": "dist/assets/glow-context-1-3522-1833.svg",
+      "source_path": "dist/assets/glow-context-1-3522-1833.svg",
+      "bytes": 1480,
+      "sha256": "355eb278040d2fab1a3b24a2110ab4548e0cf204cfb772ef782307b4bac81d3e",
+      "source_git_blob": "76d606b1303dbb70442ca83e15c30b5057d054d7"
+    },
+    {
+      "path": "dist/assets/glow-context-1-3534-3225.svg",
+      "source_path": "dist/assets/glow-context-1-3534-3225.svg",
+      "bytes": 1480,
+      "sha256": "278fdba9f2046cd3b7f6c7623bfc987eb6906a4e5bbbce8c1b5558303fe3d303",
+      "source_git_blob": "c93ace0c9ff8dbfbaf915f00354b208d2aa29d57"
+    },
+    {
+      "path": "dist/assets/glow-context-1-both.svg",
+      "source_path": "dist/assets/glow-context-1-both.svg",
+      "bytes": 1480,
+      "sha256": "1a9f09f7d3546575714dbfb02bf83d18d0e6f7a936196c3bca212d2afaa1009e",
+      "source_git_blob": "9f785da205cd4c84cebe622882dd931afb9831f4"
+    },
+    {
+      "path": "dist/assets/glow-context-1.svg",
+      "source_path": "dist/assets/glow-context-1.svg",
+      "bytes": 1480,
+      "sha256": "58ff94c57f0a4498a817ef9ba09418edcc64e39fc6ccb0ee9ca2c992637d78cf",
+      "source_git_blob": "61a991da3e8c93e5ac3c9bf8ae0c5b74d517f79c"
+    },
+    {
+      "path": "dist/assets/glow-context-2-3522-1833.svg",
+      "source_path": "dist/assets/glow-context-2-3522-1833.svg",
+      "bytes": 1480,
+      "sha256": "1f5b40306c7eb54c5755c3b38a53f8f724c8e2e9642dea4376e18fe33d3b6d11",
+      "source_git_blob": "c530362829b2112e8a662c2f98bb9a1a6f78df77"
+    },
+    {
+      "path": "dist/assets/glow-context-2-3534-3225.svg",
+      "source_path": "dist/assets/glow-context-2-3534-3225.svg",
+      "bytes": 1480,
+      "sha256": "c184a83027963c462bfc8bebd37f7c07a565f5df47f117f42b25f82b9b8ea936",
+      "source_git_blob": "bbec28e433e49201a46a768a2743fbd7388359a7"
+    },
+    {
+      "path": "dist/assets/glow-context-2-both.svg",
+      "source_path": "dist/assets/glow-context-2-both.svg",
+      "bytes": 1480,
+      "sha256": "554cfed9ba3276e466cb6b018313b804021f80a4ee08c06374241f6df2a4b65d",
+      "source_git_blob": "b86f254ebae5bf907bb3d776cdd42168d47d6a89"
+    },
+    {
+      "path": "dist/assets/glow-context-2.svg",
+      "source_path": "dist/assets/glow-context-2.svg",
+      "bytes": 1480,
+      "sha256": "74554df5d584649b4eef8e1e36bbdccc44c43e44c4e44ee5fa4f65fd51e2ba8a",
+      "source_git_blob": "41d75c09498a9378604f6bdda91fc6db910f63f1"
+    },
+    {
+      "path": "dist/assets/glow-shape-1.svg",
+      "source_path": "dist/assets/glow-shape-1.svg",
+      "bytes": 1402,
+      "sha256": "e95b75dfba9c335db9d68978462574f77e1883d4ba142da35275dadcefab01ee",
+      "source_git_blob": "cc8687e82e92b2b446b0a96c809e9c48a0446f2e"
+    },
+    {
+      "path": "dist/assets/glow-shape-2.svg",
+      "source_path": "dist/assets/glow-shape-2.svg",
+      "bytes": 1387,
+      "sha256": "fabc2557cd7b0c71707c8900ecc3e4b3a85106c348d64c3b552548d35db41678",
+      "source_git_blob": "f975b15dbdb39e9ffdce37525520b249f4cef6c9"
+    },
+    {
+      "path": "dist/assets/hint-microphone.svg",
+      "source_path": "dist/assets/hint-microphone.svg",
+      "bytes": 38335,
+      "sha256": "84840c86da163adfcc11db182dc123279d16ae2cf5e704218135e2d793f01e48",
+      "source_git_blob": "897da578b8309516b741e957e9a9aa0c274885d5"
+    },
+    {
+      "path": "dist/assets/label-end.svg",
+      "source_path": "dist/assets/label-end.svg",
+      "bytes": 8225,
+      "sha256": "4129fa33022d65d85ac49190d1820893043de317378ae4a80501f4c5fbb5422f",
+      "source_git_blob": "4d3854e65eb369361b780edfc2c3608ecef6da2f"
+    },
+    {
+      "path": "dist/assets/label-flip.svg",
+      "source_path": "dist/assets/label-flip.svg",
+      "bytes": 8955,
+      "sha256": "e04c1d89b5ad928a38333a50b68dbacfcd5301bb36ae3aec3f1bade005b11532",
+      "source_git_blob": "700cb45bcc30dc7a690f40b723f78fe94cd729c4"
+    },
+    {
+      "path": "dist/assets/label-microphone.svg",
+      "source_path": "dist/assets/label-microphone.svg",
+      "bytes": 6428,
+      "sha256": "1384d03baa4a784d82e6dd6723305ce67b25eed2197659228fe475799dd16c8c",
+      "source_git_blob": "ceb7722d5c90739f930a36621e63e2e35656cbe9"
+    },
+    {
+      "path": "dist/assets/label-speaker.svg",
+      "source_path": "dist/assets/label-speaker.svg",
+      "bytes": 2910,
+      "sha256": "60b9067fb8147801d91b0873f4c96788c3e0acf0c7a27902a37a38309d25cf92",
+      "source_git_blob": "0c7ccdd39a264877fd33ebcbc8925c97ba6924b2"
+    },
+    {
+      "path": "dist/assets/label-video.svg",
+      "source_path": "dist/assets/label-video.svg",
+      "bytes": 4812,
+      "sha256": "0f1a5de7199072ece4119150fe678c8a847eee1a33f2e9c11681c127485b0090",
+      "source_git_blob": "76b640dcc2bf42f31def1371e4555b53cf43fc26"
+    },
+    {
+      "path": "dist/assets/light-base-active.png",
+      "source_path": "dist/assets/light-base-active.png",
+      "bytes": 375451,
+      "sha256": "13225c191643c9858cda642424145e9215792ba0a1b10ad33100867a47d74f02",
+      "source_git_blob": "02574b6a43ade492156250a4d1ecd74e4f00fa86"
+    },
+    {
+      "path": "dist/assets/light-layer09-complete.png",
+      "source_path": "dist/assets/light-layer09-complete.png",
+      "bytes": 284926,
+      "sha256": "6d185ce71075cc3c6959955bb644e57bbd5db49335e69f4705d1f3fde109d59e",
+      "source_git_blob": "5393e053868083131f61f1524972a23d7456804d"
+    },
+    {
+      "path": "dist/assets/light-mask-2.svg",
+      "source_path": "dist/assets/light-mask-2.svg",
+      "bytes": 1982,
+      "sha256": "c313f456f456441139a3a76c0e4775a80d6502bc59db26176d5a444c8e46647f",
+      "source_git_blob": "b12048b2ac84cd0ae1f8a668b9488798169e0473"
+    },
+    {
+      "path": "dist/assets/light-mask-3522-1757.svg",
+      "source_path": "dist/assets/light-mask-3522-1757.svg",
+      "bytes": 1982,
+      "sha256": "cd1b5b1ae9818525c24656033511ca13e8bef79490d3314274df7e97caff9d11",
+      "source_git_blob": "328483a49599556411dccf1c5183b7f6b5142e2e"
+    },
+    {
+      "path": "dist/assets/light-mask-3522-1833.svg",
+      "source_path": "dist/assets/light-mask-3522-1833.svg",
+      "bytes": 1982,
+      "sha256": "fb8124b4af299db000348a01c1136096a6637b0d266269acd229e59e1af1c4bb",
+      "source_git_blob": "7a0ee8111d68213d932936cd6934f57fe64bc404"
+    },
+    {
+      "path": "dist/assets/light-mask-3534-3145.svg",
+      "source_path": "dist/assets/light-mask-3534-3145.svg",
+      "bytes": 1982,
+      "sha256": "c8307602bc3df13c7c3b8377c664376942d35aa339b65a154b43a8cb0f6f2f93",
+      "source_git_blob": "b6ba714bfb6898f80f30cd14214fff3361b9da06"
+    },
+    {
+      "path": "dist/assets/light-mask-3534-3225.svg",
+      "source_path": "dist/assets/light-mask-3534-3225.svg",
+      "bytes": 1982,
+      "sha256": "cff4f1a6a693b98ce6391a24ca6b739d17370e6172ebb01a0a24060c13632aa4",
+      "source_git_blob": "a8d78e9efced8cb69d7db1284ea32c7a9e5da8e4"
+    },
+    {
+      "path": "dist/assets/light-mask-3560-5502.svg",
+      "source_path": "dist/assets/light-mask-3560-5502.svg",
+      "bytes": 1982,
+      "sha256": "c29096858a86f272c0fdefd1e35306c642f28df90ef075a8e24b79a9e1e76be2",
+      "source_git_blob": "076c6102b9e04a0c7cadd2686a40a78932330d01"
+    },
+    {
+      "path": "dist/assets/light-mask-3694-4930.svg",
+      "source_path": "dist/assets/light-mask-3694-4930.svg",
+      "bytes": 1982,
+      "sha256": "68f6569e6a4d513c0d92e22df21d3d08edfde721cc690b083760e17c3f1d9809",
+      "source_git_blob": "205381f64525182c3f384fa05f06e4bf98a2548e"
+    },
+    {
+      "path": "dist/assets/light-mask-both.svg",
+      "source_path": "dist/assets/light-mask-both.svg",
+      "bytes": 1982,
+      "sha256": "4b71e00eea2c17e01fc1c4136750f13e8319524d91f47210bfa236f02baf7c37",
+      "source_git_blob": "da9b3a8f0993a4db16186897629ddcb5b373babe"
+    },
+    {
+      "path": "dist/assets/light-mask-preparing.svg",
+      "source_path": "dist/assets/light-mask-preparing.svg",
+      "bytes": 1982,
+      "sha256": "ee87e8e185fb7f645433de8f52a7ca739e6b77218873dadfc4d950c6502499ea",
+      "source_git_blob": "fd4ae9a626e08fd20fcaf0e0d8d2b40fc86adf76"
+    },
+    {
+      "path": "dist/assets/light-mask.svg",
+      "source_path": "dist/assets/light-mask.svg",
+      "bytes": 1972,
+      "sha256": "e638ed025a90f401216942de313231ac86e9448fa9b9e7b06261600b1ca4f348",
+      "source_git_blob": "2b7b1c1af1b3fa9ab9668e00849926d9001eb95d"
+    },
+    {
+      "path": "dist/assets/light-texture-2.png",
+      "source_path": "dist/assets/light-texture-2.png",
+      "bytes": 140397,
+      "sha256": "0d83849cb2589bfa2a2caabb1ec12da7e414cadd1c826071154150e4c38e1d30",
+      "source_git_blob": "0f60f19fcf5ba040e6627fd79f23c1437d333fd3"
+    },
+    {
+      "path": "dist/assets/light-texture.png",
+      "source_path": "dist/assets/light-texture.png",
+      "bytes": 138779,
+      "sha256": "c0072324d4ef07062d52979f1bbc5ca7e440c917acd30059bfc15ebc10977c74",
+      "source_git_blob": "822a5368356a1e5c9820f309580082632ecd3589"
+    },
+    {
+      "path": "dist/assets/microphone-off.svg",
+      "source_path": "dist/assets/microphone-off.svg",
+      "bytes": 983,
+      "sha256": "3d4e737026abb2a63949557ab3b3300e73a00adaf40549eb3efdd63871e7ed37",
+      "source_git_blob": "8f1daeac79511a817b813947643058433f638dcc"
+    },
+    {
+      "path": "dist/assets/microphone-on.svg",
+      "source_path": "dist/assets/microphone-on.svg",
+      "bytes": 638,
+      "sha256": "01eb44e5711577f9e2de8b8202dd1d5714cc22ba45321a9337e0bcbfcadb6757",
+      "source_git_blob": "c0f7d7d7367d1b92774e7268a7b9a5665b67f1ae"
+    },
+    {
+      "path": "dist/assets/notice-ended-complete.svg",
+      "source_path": "dist/assets/notice-ended-complete.svg",
+      "bytes": 17055,
+      "sha256": "db94761541d16e011bb8791fa6cf6de53236f7e1e9b0677aa65632c5ff2443fc",
+      "source_git_blob": "1ec412f29c2ff3930fefda535c8cef8e9599ecb7"
+    },
+    {
+      "path": "dist/assets/notice-peer-complete.svg",
+      "source_path": "dist/assets/notice-peer-complete.svg",
+      "bytes": 21349,
+      "sha256": "b674b6c22f399237219e40f3608d1714e0f61c21a54e4bc9e78942d28b84414c",
+      "source_git_blob": "127b89c99ad123d27f17c346e607933be6a58703"
+    },
+    {
+      "path": "dist/assets/notice-peer-label.svg",
+      "source_path": "dist/assets/notice-peer-label.svg",
+      "bytes": 21445,
+      "sha256": "ec1cc4d7311d6a3d0a993522129aa3ce915ee0b1f3572adf270aaf9badced6b0",
+      "source_git_blob": "e1f5e990b5bbccea0a70495e0a80addb09afa070"
+    },
+    {
+      "path": "dist/assets/notification-3522-1757.svg",
+      "source_path": "dist/assets/notification-3522-1757.svg",
+      "bytes": 567,
+      "sha256": "799cd34c52271e5c86fc62c787498d3e98f3cf95e159949ce16e3d3c5d21b0a8",
+      "source_git_blob": "a90dd18114e7d65f2947bebf77885c05c208e1c2"
+    },
+    {
+      "path": "dist/assets/notification-3694-4930.svg",
+      "source_path": "dist/assets/notification-3694-4930.svg",
+      "bytes": 2700,
+      "sha256": "2c98ffed331dd3ef48f0c5e4163066c354bd8dd3496f007834f86c8411cc5d9e",
+      "source_git_blob": "3227a3cee2096dba43d2f03e5e4982883c9dd560"
+    },
+    {
+      "path": "dist/assets/original-light.jpeg",
+      "source_path": "dist/assets/original-light.jpeg",
+      "bytes": 1882189,
+      "sha256": "d1336eebdcc92d8b0fb14ac575746a42985939a2756bce05a4ac41344c8eaa19",
+      "source_git_blob": "98634c72280db2a1f60b83bc966b8698c0bede60"
+    },
+    {
+      "path": "dist/assets/preparation-illustration-preparing.svg",
+      "source_path": "dist/assets/preparation-illustration-preparing.svg",
+      "bytes": 3331,
+      "sha256": "0257a0ff8f75cc5d461a40c2955ebd70c4d44fd9eb303d4ed86d46d3de7efcda",
+      "source_git_blob": "4665f8b73b6955a62fb0e5b05e9b4fab1eeae158"
+    },
+    {
+      "path": "dist/assets/preparation-ring.png",
+      "source_path": "dist/assets/preparation-ring.png",
+      "bytes": 6324,
+      "sha256": "743e6fb9bbbcbc1a7b2af7f4f3080b138c5ab86aafdbee3e70d76f0773a4130e",
+      "source_git_blob": "f07be5254fcb3358c65c309f53ce2f9bd59db837"
+    },
+    {
+      "path": "dist/assets/preparation-ring.svg",
+      "source_path": "dist/assets/preparation-ring.svg",
+      "bytes": 1146,
+      "sha256": "b749a12803e7e98c7d4499d1ed444069d7bf7b8d4d9c5e29636cb6cc485adc7a",
+      "source_git_blob": "af3784bf421ca613e31d1f809ba808bda14bd8e3"
+    },
+    {
+      "path": "dist/assets/recording-indicator-3694-4930.svg",
+      "source_path": "dist/assets/recording-indicator-3694-4930.svg",
+      "bytes": 239,
+      "sha256": "20798581b2ebcdc2e7ebd1e449222dbcf227b5251050fa79b7bfdcee4f156b68",
+      "source_git_blob": "6013976a1ee13c89e9b888639bd043abf6d49fd1"
+    },
+    {
+      "path": "dist/assets/recording-indicator-both.svg",
+      "source_path": "dist/assets/recording-indicator-both.svg",
+      "bytes": 237,
+      "sha256": "16bb4d8df50eeffb16d278923d6651fa525ad161d5459f016e66b91cb033407e",
+      "source_git_blob": "b352a201fc2a6e4e05b2e9c5013b020c330c53e9"
+    },
+    {
+      "path": "dist/assets/recording-indicator.svg",
+      "source_path": "dist/assets/recording-indicator.svg",
+      "bytes": 239,
+      "sha256": "75d76ab031620edabf5e95359bb737083c4b9cf4a5542c5ba8fdbc6f2f0fd87a",
+      "source_git_blob": "db998fbd3d692ecf1f8ffe820da069d156baf3d4"
+    },
+    {
+      "path": "dist/assets/speaker-context-vector.svg",
+      "source_path": "dist/assets/speaker-context-vector.svg",
+      "bytes": 1833,
+      "sha256": "338b85d764b8b9616a03015ccec8900af8f42e45dd7ee31ff8f19a98f57df0dd",
+      "source_git_blob": "914ccbf68273b28936d8652478e428a48968d9ff"
+    },
+    {
+      "path": "dist/assets/speaker.svg",
+      "source_path": "dist/assets/speaker.svg",
+      "bytes": 1879,
+      "sha256": "39d34f823e44b7357764d450736605f90d98d78722f44e5c61e7579a30ffd25e",
+      "source_git_blob": "171f644df9cf4c0a95697fe1b86f459007cb4dcb"
+    },
+    {
+      "path": "dist/assets/video-off.svg",
+      "source_path": "dist/assets/video-off.svg",
+      "bytes": 1878,
+      "sha256": "70bc55241dd9dbe4cd733037285e6134a7a58eedcfa5847c93f0f86cc91fd9b7",
+      "source_git_blob": "6a965e37af3d8a2c4435d0b2b2e914f3d4288ae0"
+    },
+    {
+      "path": "dist/assets/video-on.svg",
+      "source_path": "dist/assets/video-on.svg",
+      "bytes": 4726,
+      "sha256": "d771440e6b4abf9906e778feb1d2de002a358876b682cc8fc090bf926e749610",
+      "source_git_blob": "7c4796a839300835d3e3e95cd48d447466b18307"
+    },
+    {
+      "path": "dist/assets/wifi-black-both.svg",
+      "source_path": "dist/assets/wifi-black-both.svg",
+      "bytes": 1625,
+      "sha256": "c1f245ae42e69e1ad763e8f84f61b212bad2b8d078716c7eb5e93624506f3bd4",
+      "source_git_blob": "bf7e1cb4ab11089d051374f9a9a809ed438c8e17"
+    },
+    {
+      "path": "dist/assets/wifi-black.svg",
+      "source_path": "dist/assets/wifi-black.svg",
+      "bytes": 1625,
+      "sha256": "69e50397514dd9af3b68e0f2814afcc831e5f26a6d24323ab0ad65f2425f7885",
+      "source_git_blob": "d8f5e1fd30d79bfce1f92915fae8c96444d319c0"
+    },
+    {
+      "path": "dist/audio-model.js",
+      "source_path": "dist/audio-model.js",
+      "bytes": 1302,
+      "sha256": "6f778172584441794f34fc55138752c69fd33f13aa5d950b55cd6b07756d0059",
+      "source_git_blob": "036361847dee9b303c18497c1bcc7c9a98837b0f"
+    },
+    {
+      "path": "dist/backup-engine-6f82df0.js.txt",
+      "source_path": "dist/backup-engine-6f82df0.js.txt",
+      "bytes": 25563,
+      "sha256": "eef48fef63adc656988b10fd28b2f51bd02b928d7e7fc3f6b71b75bea939d730",
+      "source_git_blob": "18275cf21bd5e86046dc1ea11687b1e63db39fca"
+    },
+    {
+      "path": "dist/index.html",
+      "source_path": "dist/index.html",
+      "bytes": 8386,
+      "sha256": "f8b49f32607280ba553412ee42f8c865b80b3b1d10204dfbe00b1e3f3384fd44",
+      "source_git_blob": "7fb2415c6b13ae37cf10085d552b16e8df30bcd0"
+    },
+    {
+      "path": "dist/light-renderer.js",
+      "source_path": "dist/light-renderer.js",
+      "bytes": 11495,
+      "sha256": "576eebe42112a80927be955d965d96b7c01c352aa14381569b0edabf37a4521d",
+      "source_git_blob": "a828ad8a89451119689320f6d19a67bab1649b8f"
+    },
+    {
+      "path": "dist/refinements.css",
+      "source_path": "dist/refinements.css",
+      "bytes": 4696,
+      "sha256": "a48984b257185468664d82952b0bceba818c90c8aa3253609d6ed626ad8b284e",
+      "source_git_blob": "587f0de19020ad9166c52f9514f9e4537babd399"
+    },
+    {
+      "path": "dist/settings.js",
+      "source_path": "dist/settings.js",
+      "bytes": 759,
+      "sha256": "9c86bd25d6bde3a2077400787029140fc89f473fdf4e574ea9025cc5518ee735",
+      "source_git_blob": "ac214b9f86cf4f2325ca919d08c9ac01b9eb34f6"
+    },
+    {
+      "path": "dist/styles.css",
+      "source_path": "dist/styles.css",
+      "bytes": 13078,
+      "sha256": "35589ad586866ba57eb03932790a606c2400e6e65ebf0fcf51c93a058bfedfdc",
+      "source_git_blob": "3a68ab4df4ac7ab315a9034d380bd7a8b5bd04b3"
+    },
+    {
+      "path": "figma-source.json",
+      "source_path": "figma-source.json",
+      "bytes": 995,
+      "sha256": "8b694c7b11b0983c483535bcb46772d9732c0e97046e41d6eef915cbd539e1f4",
+      "source_git_blob": "e42dd4b9e9dce6be90ea96c30104df51417f28a1"
+    },
+    {
+      "path": "server.cjs",
+      "source_path": "server.cjs",
+      "bytes": 927,
+      "sha256": "111aa60492611fbf26f22a3e5fdea12f7758d5c2847fc539a59371b1687a3351",
+      "source_git_blob": "33a5884b96a8719514be00e24ca9bd847c0eb445"
+    },
+    {
+      "path": "tests/audio-check.mjs",
+      "source_path": "tests/audio-check.mjs",
+      "bytes": 1195,
+      "sha256": "768e2f1887294d52aa87bcecb2eb1e84c3a143d6f519c6814408230c4b002955",
+      "source_git_blob": "3f76383250264d3ae5078ec4bdf804b3d5d0be4e"
+    }
+  ]
+}

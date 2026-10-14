@@ -1,0 +1,24 @@
+{
+  "checked_on": "2026-10-14",
+  "approved_version": 5,
+  "source_commit": "fcdf9f841d6bb6b404d2e4d6054f7cae9f09ab26",
+  "frozen_source_files": 87,
+  "git_blob_match": "pass",
+  "sha256_snapshot_check": "pass",
+  "javascript_syntax": "pass",
+  "audio_model": {
+    "quiet": 0.05351485204651618,
+    "normal": 0.4015027407342353,
+    "loud": 0.9336846134021527,
+    "quiet60seconds": "no amplification",
+    "noise": "rejected",
+    "twenty_ms_clicks": "rejected",
+    "attack_75ms": "pass",
+    "release_550ms": "pass"
+  },
+  "http_files_verified": 50,
+  "original_source_git_clean": true,
+  "published_site_changes": false,
+  "physical_human_microphone_test": "not performed; requires device/browser permission",
+  "browser_qa_history": "QA.md and UI-REFINEMENTS.md retained from approved source"
+}
